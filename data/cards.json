@@ -33,7 +33,7 @@
     "meta": "የጥያቄ መርሃ ግብር እና የመድረሻ ጊዜ",
     "desc": "ከሰኖ እስከ አርብ ብቻ፣ በ1–4 ቀናት ውስጥ ይደርሳል",
     "content": "<ul><li><strong>የመውጫ ጥያቄ፡</strong> ሰኞ–አርብ (በሳምንቱ መጨረሻ ጥያቄዎች የሉም)።</li><li><strong>ገንዘብ የሚደርስበት ጊዜ፡</strong> 1–4 ቀናት (ሳምንቱ መጨረሻ ቀናት ተጨምረው)።</li><li><strong>ዝቅተኛ መውጫ፡</strong> እንደ ደረጃዎ ይወሰናል (ካርዱን \"በደረጃ ገቢዎች\" ይመልከቱ)።</li></ul><h4>📱 ገቢዎችዎን ለማውጣት ደረጃዎች (በCBE / ቴሌብር)፡</h4><ol style=\"margin-left: 1.2rem; line-height: 1.6;\"><li>ወደ <strong>«መለያ»</strong> ይሂዱ (በታች ቀኝ በኩል ያለው ምናሌ)።</li><li>በ <strong>«የመለያ ቀሪ ሂሳብ»</strong> ላይ ጠቅ ያድርጉ።</li><li>ከቀሪ ሂሳብዎ በታች ያለውን <strong>«አውጣ»</strong> አዝራር ጠቅ ያድርጉ።</li><li>መጠኑን ያስገቡ (ዝቅተኛው፡ እንደ ደረጃዎ) እና ያረጋግጡ።</li></ol><div style=\"text-align: center; margin: 20px 0;\"><img src=\"images/withdraw-step2.jpg\" alt=\"የመውጫ ገጽ\" style=\"max-width: 100%; max-height: 400px; border-radius: 12px; cursor: pointer;\" onclick=\"openLightbox(this)\"><div style=\"font-size: 0.7rem; color: var(--text-muted); margin-top: 6px;\">የገንዘብ ማውጣት ሂደት ፎቶግራፍ</div></div><div class=\"warning-box\">📌 ሁሉም መውጫዎች በቅደም ተከተል ይቀመጣሉ። መዘግየቶችን ለማስወገድ የባንክ መረጃዎችዎ ትክክል መሆናቸውን ያረጋግጡ።</div>"
-  }
+  },
   {
     "id": "why-topup",
     "title": "ለምን መሙላት አለብኝ?",
