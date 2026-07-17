@@ -1352,7 +1352,7 @@
                 checkScrollForToTop();
             })
             .catch(err => {
-                console.error('加载卡片数据失败:', err);
+                console.error('Failed to load card data:', err);
                 // 显示错误提示
                 cardsArea.innerHTML = `<div style="padding:40px;text-align:center;color:var(--text-muted);">⚠️ ይዘቱን ማግኘት አልተቻለም። እባክዎ ደግመው ይሞክሩ።</div>`;
             });
