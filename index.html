@@ -1338,7 +1338,7 @@
         // ============================================================
         // LOAD DATA AND START
         // ============================================================
-        fetch('data/cards.json')
+        fetch('data/cards.json?t=' + Date.now())
             .then(res => {
                 if (!res.ok) throw new Error('Failed to load cards.json');
                 return res.json();
