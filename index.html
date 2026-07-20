@@ -1086,6 +1086,22 @@
 <script src="contact-config.js"></script>
 <script>
     (function() {
+
+        // ============================================================
+        // SHARE
+        // ============================================================
+        function doShare() {
+            var url = window.location.href;
+            if (navigator.share) {
+                navigator.share({ title: document.title, text: 'ፒጂ ኢርን – ዕለታዊ ኮሚሽን። ትዕዛዞችን ያስገቡ እና በየቀኑ ይስሩ።', url: url }).catch(function(){});
+            } else if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(url).then(function() { alert('ሊንኩ ተቀድቷል!'); }).catch(function() { alert('መቀዳት አልተቻለም። እባክዎ በእጅ ይቅዱ፡ ' + url); });
+            } else {
+                alert('መጋሪያ አይደገፍም። እባክዎ ይህን ሊንክ ይቅዱ፡\n' + url);
+            }
+        }
+        window.doShare = doShare;
+
         // ============================================================
         // LIGHTBOX
         // ============================================================
