@@ -6,12 +6,12 @@
     <title>ፒጂ ኢርን – ዕለታዊ ኮሚሽን</title>
     <meta property="og:title" content="ፒጂ ኢርን – ዕለታዊ ኮሚሽን">
     <meta property="og:description" content="የፒጂ መመሪያ ማዕከል – የመድረክ መግለጫ፣ ደህንነት፣ የተቀማጭ/መውጫ ህጎች እና ደረጃ በደረጃ መመሪያዎች። 8 ዓመታት የተረጋጋ፣ ግልጽ እና ህጋዊ አሰራር።">
-    <meta property="og:image" content="https://raw.githubusercontent.com/pgreelshrt/Lucia/main/images/share-preview.png">
+    <meta property="og:image" content="https://raw.githubusercontent.com/你的用户名/你的仓库名/main/images/share.jpg">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ፒጂ ኢርን – ዕለታዊ ኮሚሽን">
     <meta name="twitter:description" content="ዕለታዊ ኮሚሽን ያግኙ። 8 ዓመታት የተረጋጋ አገልግሎት። ተግባራትን ያከናውኑ፣ ገቢዎችን በቀላሉ ያውጡ።">
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/pgreelshrt/Lucia/main/images/share-preview.png">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/你的用户名/你的仓库名/main/images/share.jpg">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💰%3C/text%3E%3C/svg%3E">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -338,6 +338,7 @@
             line-height: 1.6;
             max-width: 720px;
             margin: 0 auto;
+            width: 100%;
         }
         .detail-text p {
             margin-bottom: 1.25rem;
@@ -367,6 +368,11 @@
         }
         .detail-text tr:nth-child(even) {
             background: #f1f5f9;
+        }
+        .detail-text img {
+            max-width: 100%;
+            border-radius: 12px;
+            cursor: pointer;
         }
         .warning-box {
             background: var(--warning-bg);
@@ -708,6 +714,49 @@
             border-radius: 12px;
             cursor: pointer;
         }
+        .activity-list-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .activity-list-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        .activity-list-item .activity-title {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--text-primary);
+        }
+        .activity-list-item .activity-status {
+            font-size: 0.75rem;
+            padding: 4px 12px;
+            border-radius: 40px;
+            background: var(--badge-bg);
+            color: var(--badge-color);
+            white-space: nowrap;
+        }
+        .activity-list-item .activity-status.ended {
+            background: #f1f5f9;
+            color: #94a3b8;
+        }
+        .activity-detail-image {
+            text-align: center;
+            margin: 16px 0;
+        }
+        .activity-detail-image img {
+            max-width: 100%;
+            max-height: 500px;
+            border-radius: 12px;
+            cursor: pointer;
+        }
         @media (max-width: 740px) {
             .card-grid {
                 grid-template-columns: 1fr;
@@ -759,6 +808,14 @@
             }
             .income-table th, .income-table td {
                 padding: 6px 4px;
+            }
+            .activity-list-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            .activity-list-item .activity-status {
+                align-self: flex-start;
             }
         }
         .income-table {
@@ -1060,10 +1117,12 @@
         }
 
         // ============================================================
-        // DATA LOADER (load from data/cards.json)
+        // DATA LOADER
         // ============================================================
         let CARDS_DATA = [];
         let ARTICLES = {};
+        let ACTIVITIES = [];
+        let activityListCache = null;
 
         function buildArticlesFromData() {
             ARTICLES = {};
@@ -1080,9 +1139,25 @@
                 meta: "ለተቀማጭ/መውጫ/ማሻሻያ ቀጥተኛ ድጋፍ",
                 content: buildContactManagerContent()
             };
+            // Add activity center as a special entry
+            ARTICLES['activity-center'] = {
+                title: "📢 የእንቅስቃሴ ማዕከል",
+                meta: "ወቅታዊ እንቅስቃሴዎችን ይመልከቱ እና ይሳተፉ",
+                content: buildActivityListHTML()
+            };
+            // Also add each activity as a special entry 
+            ACTIVITIES.forEach(act => {
+                ARTICLES['activity-' + act.id] = {
+                    title: act.title,
+                    meta: act.time || "እንቅስቃሴ",
+                    content: buildActivityDetailHTML(act)
+                };
+            });
         }
 
-        // Contact manager content (depends on contact-config.js)
+        // ============================================================
+        // CONTACT MANAGER
+        // ============================================================
         function buildContactManagerContent() {
             if (window.CONTACT_CONFIG) {
                 if (window.CONTACT_CONFIG.contacts && Array.isArray(window.CONTACT_CONFIG.contacts)) {
@@ -1090,18 +1165,71 @@
                     for (let c of window.CONTACT_CONFIG.contacts) {
                         links += `<a href="${c.url}" target="_blank" rel="noopener noreferrer" class="contact-link">${c.icon ? c.icon+' ' : ''}${c.name}</a> `;
                     }
-                    return `<p><strong>የሃላፊ እውቂያዎች፡</strong></p><p>${links}</p><p>🕒 <strong>የስራ ሰዓት፡</strong> ${window.CONTACT_CONFIG.hours || "13፡00 – 01፡00 (EAT, UTC+3)"}</p><p>ሃላፊዎ ለመሙያ ማረጋገጫ፣ ለመውጫ ጥያቄዎች፣ ለደረጃ ማሻሻያ እና ለዕለታዊ ድጋፍ ይረዱዎታል።</p>`;
+                    return `<p><strong>የሃላፊ እውቂያዎች፡</strong></p><p>${links}</p><p>🕒 <strong>የስራ ሰዓት፡</strong> ${window.CONTACT_CONFIG.hours || "9h – 21h (UTC+3)"}</p><p>ሃላፊዎ ለመሙያ ማረጋገጫ፣ ለመውጫ ጥያቄዎች፣ ለደረጃ ማሻሻያ እና ለዕለታዊ ድጋፍ ይረዱዎታል።</p>`;
                 } else if (window.CONTACT_CONFIG.telegram && window.CONTACT_CONFIG.signal) {
-                    return `<p><strong>የሃላፊ ኦፊሴላዊ እውቂያዎች፡</strong></p><p><a href="${window.CONTACT_CONFIG.telegram}" target="_blank" rel="noopener noreferrer" class="contact-link">📱 ቴሌግራም ሃላፊ</a> <a href="${window.CONTACT_CONFIG.signal}" target="_blank" rel="noopener noreferrer" class="contact-link">🔒 ሲግናል ሃላፊ</a></p><p>🕒 <strong>የስራ ሰዓት፡</strong> ${window.CONTACT_CONFIG.hours || "13፡00 – 01፡00 (EAT, UTC+3)"}</p><p>ሃላፊዎ ለመሙያ ማረጋገጫ፣ ለመውጫ ጥያቄዎች፣ ለደረጃ ማሻሻያ እና ለዕለታዊ ድጋፍ ይረዱዎታል።</p>`;
+                    return `<p><strong>የሃላፊ ኦፊሴላዊ እውቂያዎች፡</strong></p><p><a href="${window.CONTACT_CONFIG.telegram}" target="_blank" rel="noopener noreferrer" class="contact-link">📱 ቴሌግራም ሃላፊ</a> <a href="${window.CONTACT_CONFIG.signal}" target="_blank" rel="noopener noreferrer" class="contact-link">🔒 ሲግናል ሃላፊ</a></p><p>🕒 <strong>የስራ ሰዓት፡</strong> ${window.CONTACT_CONFIG.hours || "9h – 21h (UTC+3)"}</p><p>ሃላፊዎ ለመሙያ ማረጋገጫ፣ ለመውጫ ጥያቄዎች፣ ለደረጃ ማሻሻያ እና ለዕለታዊ ድጋፍ ይረዱዎታል።</p>`;
                 }
             }
             return `<p><em>⚠️ የእውቂያ መረጃ አልተዋቀረም። እባክዎ ሃላፊዎን በቀጥታ ያነጋግሩ።</em></p><p>አስተዳዳሪ ከሆኑ በጣቢያው ስር <code>contact-config.js</code> ፋይል በ<code>contacts</code> ድርድር ወይም በ<code>telegram/signal</code> መስኮች ይፍጠሩ።</p>`;
         }
 
         // ============================================================
-        // ALL_CARDS (只保留 ID 和标题，用于目录和卡片排序)
+        // ACTIVITY LIST & DETAIL RENDERERS
+        // ============================================================
+        function buildActivityListHTML() {
+            if (!ACTIVITIES || ACTIVITIES.length === 0) {
+                return `<p style="text-align:center;padding:40px 0;color:var(--text-muted);">📭 በአሁኑ ጊዜ ምንም እንቅስቃሴ የለም። በኋላ ይመለሱ።</p>`;
+            }
+            let html = `<div style="max-width:600px;margin:0 auto;"><p style="color:var(--text-secondary);margin-bottom:20px;">ከታች ካሉት እንቅስቃሴዎች አንዱን ይምረጡ ዝርዝሩን ለማየት፡</p>`;
+            ACTIVITIES.forEach(act => {
+                const statusClass = act.status === 'በሂደት ላይ ነው' ? '' : 'ended';
+                const statusText = act.status || 'በሂደት ላይ ነው';
+                html += `<div class="activity-list-item" onclick="showDetail('activity-${act.id}')">
+                    <span class="activity-title">${act.title}</span>
+                    <span class="activity-status ${statusClass}">${statusText}</span>
+                </div>`;
+            });
+            html += `<div class="detail-actions" style="margin-top:24px;">
+                <button class="detail-btn detail-btn-primary" onclick="backToHome()">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:18px;height:18px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+                    ወደ መመሪያዎች ተመለስ
+                </button>
+            </div></div>`;
+            return html;
+        }
+
+        function buildActivityDetailHTML(act) {
+            let html = `<div style="max-width:600px;margin:0 auto;">`;
+            // Status badge
+            const statusClass = act.status === 'በሂደት ላይ ነው' ? '' : 'ended';
+            html += `<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
+                <span style="font-size:0.9rem;color:var(--text-muted);">📅 ${act.time || 'ቋሚ'}</span>
+                <span class="activity-status ${statusClass}" style="font-size:0.8rem;padding:4px 16px;">${act.status || 'በሂደት ላይ ነው'}</span>
+            </div>`;
+            // Image if exists
+            if (act.image) {
+                html += `<div class="activity-detail-image">
+                    <img src="${act.image}" alt="${act.title}" onclick="openLightbox(this)">
+                </div>`;
+            }
+            // Content
+            if (act.content) {
+                html += `<div style="margin-top:12px;">${act.content}</div>`;
+            }
+            // Back button
+            html += `<div class="detail-actions" style="margin-top:24px;">
+                <button class="detail-btn detail-btn-primary" onclick="showDetail('activity-center')">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:18px;height:18px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+                    ወደ እንቅስቃሴዎች ዝርዝር ተመለስ
+                </button>
+            </div></div>`;
+            return html;
+        }
+        // ============================================================
+        // ALL_CARDS 
         // ============================================================
         const ALL_CARDS = [
+            { id: "activity-center", title: "📢 የእንቅስቃሴ ማዕከል", desc: "ወቅታዊ እንቅስቃሴዎችን ይመልከቱ እና ይሳተፉ" },
             { id: "why-pg-safe", title: "ፒጂ ለምን ደህንነቱ የተገበረ ነው?", desc: "ህጋዊ፣ የተረጋጋ፣ የገንዘብ ደህንነት እና ሊረጋገጥ የሚችል" },
             { id: "deposit-earnings", title: "በደረጃ ገቢዎች", desc: "ዕለታዊ ገቢ፡ 60 ETB (ጁኒየር)፣ 280 ETB (VIP 1)፣ 800 ETB (VIP 2)፣ 2,500 ETB (VIP 3)" },
             { id: "topup-steps", title: "የመሙያ ደረጃዎች", desc: "ሃላፊውን ያነጋግሩ → ዝውውር ያድርጉ → ያረጋግጡ → ክሬዲት ይቀበሉ" },
@@ -1137,6 +1265,7 @@
 
         function getCardIcon(cardId) {
             const icons = {
+                'activity-center': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>`,
                 'why-pg-safe': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>`,
                 'deposit-earnings': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`,
                 'topup-steps': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>`,
@@ -1164,7 +1293,11 @@
             cardsArea.innerHTML = '';
             ALL_CARDS.forEach(card => {
                 if (!visible.includes(card.id)) return;
-                const article = ARTICLES[card.id];
+                let article = ARTICLES[card.id];
+                // For activity-center, use the dynamic content
+                if (card.id === 'activity-center') {
+                    article = ARTICLES['activity-center'];
+                }
                 const shortDesc = article ? article.meta : card.desc;
                 const iconSvg = getCardIcon(card.id);
                 const cardDiv = document.createElement('div');
@@ -1198,13 +1331,45 @@
 
         function showDetail(articleId, fromBack) {
             if (isTransitioning) return;
+            
+            // If it's an activity detail, we need to ensure it's in ARTICLES
+            if (articleId.startsWith('activity-') && articleId !== 'activity-center') {
+                const actId = articleId.replace('activity-', '');
+                const act = ACTIVITIES.find(a => a.id === actId);
+                if (act) {
+                    ARTICLES['activity-' + act.id] = {
+                        title: act.title,
+                        meta: act.time || "እንቅስቃሴ",
+                        content: buildActivityDetailHTML(act)
+                    };
+                } else {
+                    return;
+                }
+            }
+            
+            // If it's activity-center, rebuild its content (in case activities changed)
+            if (articleId === 'activity-center') {
+                ARTICLES['activity-center'] = {
+                    title: "📢 የእንቅስቃሴ ማዕከል",
+                    meta: "ወቅታዊ እንቅስቃሴዎችን ይመልከቱ እና ይሳተፉ",
+                    content: buildActivityListHTML()
+                };
+            }
+            
             const article = ARTICLES[articleId];
             if (!article) return;
             isTransitioning = true;
             savedScrollY = window.scrollY;
+            
             let actionsHtml = '';
             if (articleId === 'contact-manager') {
                 actionsHtml = `<div class="detail-actions"><button class="detail-btn detail-btn-primary" id="backToGuidesBtnDetail"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:18px;height:18px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg> ወደ መመሪያዎች ተመለስ</button></div>`;
+            } else if (articleId === 'activity-center') {
+                // No extra actions needed - the list has its own back button
+                actionsHtml = '';
+            } else if (articleId.startsWith('activity-')) {
+                // Activity detail has its own back button in the content
+                actionsHtml = '';
             } else {
                 actionsHtml = `<div class="detail-actions">
                     <button class="detail-btn" id="contactManagerBtnDetail">
@@ -1219,13 +1384,25 @@
                     </button>
                 </div>`;
             }
+            
             const detailIcon = getCardIcon(articleId);
-            const detailHtml = `<div class="detail-title"><span>${detailIcon} ${article.title}</span></div><div class="detail-meta">📌 ${article.meta}</div><div class="detail-text">${article.content}</div>${actionsHtml}`;
+            let metaDisplay = article.meta || '';
+            // For activity-center, use a fixed meta
+            if (articleId === 'activity-center') {
+                metaDisplay = 'ወቅታዊ እንቅስቃሴዎች';
+            }
+            const detailHtml = `<div class="detail-title"><span>${detailIcon} ${article.title}</span></div><div class="detail-meta">📌 ${metaDisplay}</div><div class="detail-text">${article.content}</div>${actionsHtml}`;
             detailContentDiv.innerHTML = detailHtml;
-            if (articleId !== 'contact-manager') {
+            
+            if (articleId !== 'contact-manager' && !articleId.startsWith('activity-') && articleId !== 'activity-center') {
                 document.getElementById('contactManagerBtnDetail')?.addEventListener('click', () => showDetail('contact-manager'));
             }
-            document.getElementById('backToGuidesBtnDetail')?.addEventListener('click', () => backToHome());
+            // Only add back button listener if it exists
+            const backBtn = document.getElementById('backToGuidesBtnDetail');
+            if (backBtn) {
+                backBtn.addEventListener('click', () => backToHome());
+            }
+            
             const detailDiv = document.querySelector('.detail-view');
             detailDiv.classList.remove('active');
             void detailDiv.offsetWidth;
@@ -1261,6 +1438,9 @@
             }, 200);
         }
 
+        // Make backToHome globally accessible for activity buttons
+        window.backToHome = backToHome;
+
         function checkScrollForToTop() {
             if (window.scrollY > 300) toTopBtn.classList.add('visible');
             else toTopBtn.classList.remove('visible');
@@ -1272,13 +1452,21 @@
             if (e.key === 'Escape') {
                 if (lightbox.style.display === 'flex') closeLightbox();
                 else if (tocModal.classList.contains('active')) tocModal.classList.remove('active');
-                else if (!detailContainer.classList.contains('hidden')) backToHome(true);
+                else if (!detailContainer.classList.contains('hidden')) {
+                    // Check if we're in activity detail or list
+                    const hash = location.hash.slice(1);
+                    if (hash && hash.startsWith('activity-') && hash !== 'activity-center') {
+                        showDetail('activity-center');
+                    } else {
+                        backToHome(true);
+                    }
+                }
             }
         }
         document.addEventListener('keydown', handleEscKey);
 
         // ============================================================
-        // BIND EVENTS & INIT
+        // BIND EVENTS
         // ============================================================
         floatingBtn.addEventListener('click', function() {
             if (!detailContainer.classList.contains('hidden')) {
@@ -1338,24 +1526,33 @@
         // ============================================================
         // LOAD DATA AND START
         // ============================================================
-        fetch('data/cards.json?t=' + Date.now())
-            .then(res => {
+        Promise.all([
+            fetch('data/cards.json?t=' + Date.now()).then(res => {
                 if (!res.ok) throw new Error('Failed to load cards.json');
                 return res.json();
+            }),
+            fetch('data/activities.json?t=' + Date.now()).then(res => {
+                if (!res.ok) throw new Error('Failed to load activities.json');
+                return res.json();
+            }).catch(() => {
+                // If activities.json doesn't exist yet, just use empty array
+                console.warn('activities.json not found, using empty list');
+                return [];
             })
-            .then(data => {
-                CARDS_DATA = data;
-                buildArticlesFromData();
-                renderCards();
-                renderTOC();
-                initRouting();
-                checkScrollForToTop();
-            })
-            .catch(err => {
-                console.error('Failed to load card data:', err);
-                // 显示错误提示
-                cardsArea.innerHTML = `<div style="padding:40px;text-align:center;color:var(--text-muted);">⚠️ ይዘቱን ማግኘት አልተቻለም። እባክዎ ደግመው ይሞክሩ።</div>`;
-            });
+        ])
+        .then(([cardsData, activitiesData]) => {
+            CARDS_DATA = cardsData;
+            ACTIVITIES = activitiesData || [];
+            buildArticlesFromData();
+            renderCards();
+            renderTOC();
+            initRouting();
+            checkScrollForToTop();
+        })
+        .catch(err => {
+            console.error('Error loading data:', err);
+            cardsArea.innerHTML = `<div style="padding:40px;text-align:center;color:var(--text-muted);">⚠️ ይዘቱን ማግኘት አልተቻለም። እባክዎ ደግመው ይሞክሩ።</div>`;
+        });
     })();
 </script>
 </body>
