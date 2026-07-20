@@ -1086,7 +1086,7 @@
 <script src="contact-config.js"></script>
 <script>
     (function() {
-                // ============================================================
+        // ============================================================
         // LIGHTBOX
         // ============================================================
         let lightboxActive = false, currentZoom = 1, imgTranslateX = 0, imgTranslateY = 0, startX = 0, startY = 0, isDragging = false;
@@ -1154,9 +1154,11 @@
             lightbox.classList.remove('dragging');
         }
 
+        // ========== ⚠️ 以下三行必须保留 ==========
         window.openLightbox = openLightbox;
         window.closeLightbox = closeLightbox;
         window.showDetail = showDetail;
+        // ========================================
 
         if (zoomInBtn) zoomInBtn.addEventListener('click', function(e) {
             e.stopPropagation();
