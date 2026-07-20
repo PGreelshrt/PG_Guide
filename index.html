@@ -1086,74 +1086,172 @@
 <script src="contact-config.js"></script>
 <script>
     (function() {
-        // ============================================================
+                // ============================================================
         // LIGHTBOX
         // ============================================================
-        let lightboxActive = false, currentZoom = 1, imgTranslateX = 0, imgTranslateY = 0, startX = 0, startY = 0, isDragging = false, initialDistance = 0, initialScale = 1, isPinching = false;
-        const lightbox = document.getElementById('lightbox'), lightboxImg = document.getElementById('lightbox-img'), lightboxContent = document.getElementById('lightboxContent'), zoomInBtn = document.getElementById('zoomInBtn'), zoomOutBtn = document.getElementById('zoomOutBtn'), zoomResetBtn = document.getElementById('zoomResetBtn'), closeBtn = document.getElementById('lightboxCloseBtn');
-        [zoomInBtn, zoomOutBtn, zoomResetBtn, closeBtn].forEach(btn => btn.style.zIndex = '1003');
-        function applyTransform() { lightboxImg.style.transform = 'translate(' + imgTranslateX + 'px, ' + imgTranslateY + 'px) scale(' + currentZoom + ')'; }
-        function clampTranslate() { if (!lightboxImg.parentElement) return; var containerRect = lightboxContent.getBoundingClientRect(), imgRect = lightboxImg.getBoundingClientRect(); var maxX = Math.max(0, (imgRect.width - containerRect.width) / 2), maxY = Math.max(0, (imgRect.height - containerRect.height) / 2); imgTranslateX = Math.min(maxX, Math.max(-maxX, imgTranslateX)); imgTranslateY = Math.min(maxY, Math.max(-maxY, imgTranslateY)); applyTransform(); }
-        function resetZoomAndPan() { currentZoom = 1; imgTranslateX = 0; imgTranslateY = 0; applyTransform(); }
-        function zoomIn() { var newZoom = currentZoom + 0.25; if (newZoom > 3) newZoom = 3; currentZoom = newZoom; applyTransform(); clampTranslate(); }
-        function zoomOut() { var newZoom = currentZoom - 0.25; if (newZoom < 0.5) newZoom = 0.5; currentZoom = newZoom; applyTransform(); clampTranslate(); }
-        function openLightbox(imgElement) { lightboxImg.src = imgElement.src; resetZoomAndPan(); lightbox.style.display = 'flex'; lightboxActive = true; document.body.classList.add('lightbox-open'); lightboxImg.onload = function() { clampTranslate(); }; if (lightboxImg.complete) clampTranslate(); }
-        function closeLightbox() { lightbox.style.display = 'none'; lightboxActive = false; resetZoomAndPan(); isDragging = false; lightbox.classList.remove('dragging'); document.body.classList.remove('lightbox-open'); }
+        let lightboxActive = false, currentZoom = 1, imgTranslateX = 0, imgTranslateY = 0, startX = 0, startY = 0, isDragging = false;
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxContent = document.getElementById('lightboxContent');
+        const zoomInBtn = document.getElementById('zoomInBtn');
+        const zoomOutBtn = document.getElementById('zoomOutBtn');
+        const zoomResetBtn = document.getElementById('zoomResetBtn');
+        const closeBtn = document.getElementById('lightboxCloseBtn');
+
+        function applyTransform() {
+            lightboxImg.style.transform = 'translate(' + imgTranslateX + 'px, ' + imgTranslateY + 'px) scale(' + currentZoom + ')';
+        }
+
+        function clampTranslate() {
+            if (!lightboxImg.parentElement) return;
+            var containerRect = lightboxContent.getBoundingClientRect();
+            var imgRect = lightboxImg.getBoundingClientRect();
+            var maxX = Math.max(0, (imgRect.width - containerRect.width) / 2);
+            var maxY = Math.max(0, (imgRect.height - containerRect.height) / 2);
+            imgTranslateX = Math.min(maxX, Math.max(-maxX, imgTranslateX));
+            imgTranslateY = Math.min(maxY, Math.max(-maxY, imgTranslateY));
+            applyTransform();
+        }
+
+        function resetZoomAndPan() {
+            currentZoom = 1;
+            imgTranslateX = 0;
+            imgTranslateY = 0;
+            applyTransform();
+        }
+
+        function zoomIn() {
+            var newZoom = currentZoom + 0.25;
+            if (newZoom > 3) newZoom = 3;
+            currentZoom = newZoom;
+            applyTransform();
+            clampTranslate();
+        }
+
+        function zoomOut() {
+            var newZoom = currentZoom - 0.25;
+            if (newZoom < 0.5) newZoom = 0.5;
+            currentZoom = newZoom;
+            applyTransform();
+            clampTranslate();
+        }
+
+        function openLightbox(imgElement) {
+            lightboxImg.src = imgElement.src;
+            resetZoomAndPan();
+            lightbox.style.display = 'flex';
+            lightboxActive = true;
+            document.body.style.overflow = 'hidden';
+            lightboxImg.onload = function() { clampTranslate(); };
+            if (lightboxImg.complete) clampTranslate();
+        }
+
+        function closeLightbox() {
+            lightbox.style.display = 'none';
+            lightboxActive = false;
+            isDragging = false;
+            document.body.style.overflow = '';
+            lightbox.classList.remove('dragging');
+        }
+
         window.openLightbox = openLightbox;
+        window.closeLightbox = closeLightbox;
         window.showDetail = showDetail;
 
-        // ============================================================
-        // SHARE
-        // ============================================================
-        function doShare() {
-            var url = window.location.href;
-            if (navigator.share) {
-                navigator.share({ title: document.title, text: 'ፒጂ ኢርን – ዕለታዊ ኮሚሽን። ትዕዛዞችን ያስገቡ እና በየቀኑ ይስሩ።', url: url }).catch(function(){});
-            } else if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(url).then(function() { alert('ሊንኩ ተቀድቷል!'); }).catch(function() { alert('መቀዳት አልተቻለም። እባክዎ በእጅ ይቅዱ፡ ' + url); });
-            } else {
-                alert('መጋሪያ አይደገፍም። እባክዎ ይህን ሊንክ ይቅዱ፡\n' + url);
+        if (zoomInBtn) zoomInBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            zoomIn();
+        });
+        if (zoomOutBtn) zoomOutBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            zoomOut();
+        });
+        if (zoomResetBtn) zoomResetBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            resetZoomAndPan();
+            clampTranslate();
+        });
+        if (closeBtn) closeBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            closeLightbox();
+        });
+
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox || e.target === lightboxContent) {
+                closeLightbox();
             }
+        });
+
+        function startDrag(e) {
+            if (currentZoom <= 1) return;
+            e.preventDefault();
+            isDragging = true;
+            lightbox.classList.add('dragging');
+            var clientX = e.clientX || (e.touches ? e.touches[0].clientX : 0);
+            var clientY = e.clientY || (e.touches ? e.touches[0].clientY : 0);
+            startX = clientX - imgTranslateX;
+            startY = clientY - imgTranslateY;
         }
 
-        // ============================================================
-        // DATA LOADER
-        // ============================================================
-        let CARDS_DATA = [];
-        let ARTICLES = {};
-        let ACTIVITIES = [];
-        let activityListCache = null;
-
-        function buildArticlesFromData() {
-            ARTICLES = {};
-            CARDS_DATA.forEach(card => {
-                ARTICLES[card.id] = {
-                    title: card.title,
-                    meta: card.meta,
-                    content: card.content
-                };
-            });
-            // Always add contact-manager from config
-            ARTICLES['contact-manager'] = {
-                title: "ሃላፊውን ያነጋግሩ",
-                meta: "ለተቀማጭ/መውጫ/ማሻሻያ ቀጥተኛ ድጋፍ",
-                content: buildContactManagerContent()
-            };
-            // Add activity center as a special entry
-            ARTICLES['activity-center'] = {
-                title: "📢 የእንቅስቃሴ ማዕከል",
-                meta: "ወቅታዊ እንቅስቃሴዎችን ይመልከቱ እና ይሳተፉ",
-                content: buildActivityListHTML()
-            };
-            // Also add each activity as a special entry 
-            ACTIVITIES.forEach(act => {
-                ARTICLES['activity-' + act.id] = {
-                    title: act.title,
-                    meta: act.time || "እንቅስቃሴ",
-                    content: buildActivityDetailHTML(act)
-                };
-            });
+        function onDrag(e) {
+            if (!isDragging) return;
+            e.preventDefault();
+            var clientX = e.clientX || (e.touches ? e.touches[0].clientX : 0);
+            var clientY = e.clientY || (e.touches ? e.touches[0].clientY : 0);
+            imgTranslateX = clientX - startX;
+            imgTranslateY = clientY - startY;
+            applyTransform();
+            clampTranslate();
         }
+
+        function endDrag() {
+            isDragging = false;
+            lightbox.classList.remove('dragging');
+            clampTranslate();
+        }
+
+        lightboxImg.addEventListener('mousedown', startDrag);
+        window.addEventListener('mousemove', onDrag);
+        window.addEventListener('mouseup', endDrag);
+
+        lightboxImg.addEventListener('touchstart', function(e) {
+            if (e.touches.length === 1) {
+                var touch = e.touches[0];
+                startX = touch.clientX - imgTranslateX;
+                startY = touch.clientY - imgTranslateY;
+                isDragging = true;
+            }
+        }, { passive: true });
+
+        lightboxImg.addEventListener('touchmove', function(e) {
+            if (isDragging && e.touches.length === 1) {
+                e.preventDefault();
+                var touch = e.touches[0];
+                imgTranslateX = touch.clientX - startX;
+                imgTranslateY = touch.clientY - startY;
+                applyTransform();
+                clampTranslate();
+            }
+        }, { passive: false });
+
+        lightboxImg.addEventListener('touchend', function() {
+            isDragging = false;
+            clampTranslate();
+        }, { passive: true });
+
+        lightbox.addEventListener('wheel', function(e) {
+            if (!lightboxActive) return;
+            e.preventDefault();
+            e.stopPropagation();
+            var delta = e.deltaY > 0 ? -0.1 : 0.1;
+            var newZoom = currentZoom + delta;
+            newZoom = Math.min(Math.max(newZoom, 0.5), 3);
+            if (newZoom !== currentZoom) {
+                currentZoom = newZoom;
+                applyTransform();
+                clampTranslate();
+            }
+        }, { passive: false });
 
         // ============================================================
         // CONTACT MANAGER
