@@ -1755,11 +1755,11 @@
         // LOAD DATA AND START
         // ============================================================
         Promise.all([
-            fetch('../data/cards.json?t=' + Date.now()).then(res => {
+            fetch('data/cards.json?t=' + Date.now()).then(res => {
                 if (!res.ok) throw new Error('Failed to load cards.json');
                 return res.json();
             }),
-            fetch('../data/activities.json?t=' + Date.now()).then(res => {
+            fetch('data/activities.json?t=' + Date.now()).then(res => {
                 if (!res.ok) return [];
                 return res.json();
             }).catch(() => [])
