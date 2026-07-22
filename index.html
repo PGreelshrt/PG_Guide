@@ -1191,26 +1191,26 @@
                 document.getElementById('langCheckEn').textContent = isAmharic ? '' : '✅';
             }
         }
+        
+function switchLang(lang) {
+    if (lang === 'am') {
+        window.location.href = '/PG_Guide/';
+    } else if (lang === 'en') {
+        window.location.href = '/PG_Guide/en/';
+    }
+}
 
-        function switchLang(lang) {
-            if (lang === 'am') {
-                window.location.href = '/';
-            } else if (lang === 'en') {
-                window.location.href = '/en/';
-            }
+window.toggleLangPanel = toggleLangPanel;
+window.switchLang = switchLang;
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        var panel = document.getElementById('langPanel');
+        if (panel.classList.contains('active')) {
+            panel.classList.remove('active');
         }
-
-        window.toggleLangPanel = toggleLangPanel;
-        window.switchLang = switchLang;
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                var panel = document.getElementById('langPanel');
-                if (panel.classList.contains('active')) {
-                    panel.classList.remove('active');
-                }
-            }
-        });
+    }
+});
 
         // ============================================================
         // LIGHTBOX
