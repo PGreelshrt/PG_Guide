@@ -1,0 +1,27 @@
+[
+  {
+    "id": "invite-activity",
+    "title": "🎁 Referral Activity",
+    "summary": "Invite your friends and earn bonuses",
+    "time": "July 20 – July 26, 2026 (Ethiopian: Hamle 13 – Hamle 19, 2018 E.C.)",
+    "status": "በሂደት ላይ ነው",
+    "content": "<p><strong>📋 Activity Rules:</strong></p><ol><li>The invited person must register through the staff member's referral link to be counted as a valid referral.</li><li>You can get your referral link through the Telegram Bot, or contact the recruitment manager to learn how to obtain it.</li></ol><p><strong>🎁 Reward Details:</strong></p><ul><li>Invite a friend to join as Junior Staff → 200 ETB</li><li>Invite a friend to join as VIP 1 → 550 ETB</li><li>Invite a friend to join as VIP 2 → 1,750 ETB</li></ul><p>📅 Activity Period: July 20 – July 26, 2026 (Ethiopian: Hamle 13 – Hamle 19, 2018 E.C.)</p>"
+  },
+  {
+    "id": "upgrade-activity",
+    "title": "🚀 Level Upgrade Subsidy Activity",
+    "summary": "Upgrade to VIP level and receive additional subsidy",
+    "time": "July 20 – July 26, 2026 (Ethiopian: Hamle 13 – Hamle 19, 2018 E.C.)",
+    "status": "በሂደት ላይ ነው",
+    "content": "<p><strong>📋 Activity Rules:</strong></p><ol><li>When users upgrade from Junior Staff to VIP 1 or higher, the company provides an additional subsidy.</li><li>After the level upgrade, the previous level's deposit will be fully refunded to the user.</li><li>On the upgrade day, you can immediately start the new level's tasks and order work.</li></ol><p><strong>🎁 Reward Details:</strong></p><ul><li>Upgrade to VIP 1 or higher → Additional subsidy 550 ETB</li></ul><p>📅 Activity Period: July 20 – July 26, 2026 (Ethiopian: Hamle 13 – Hamle 19, 2018 E.C.)</p>"
+  },
+  {
+    "id": "team-salary-activity",
+    "title": "💰 Team Fixed Salary & Tax Subsidy",
+    "summary": "Earn a fixed salary based on the number of VIP members in your team",
+    "time": "Permanent (Long-term)",
+    "status": "በሂደት ላይ ነው",
+    "image": "../images/Fixed_salary.png",
+    "content": "<p><strong>📋 Activity Rules:</strong></p><ul><li>A fixed salary is paid once per month on the 1st (UTC).</li><li>After meeting the tax subsidy criteria, you can request a subsidy fund each successful financial cycle.</li><li>This benefit is permanent — the more members you have, the higher your salary payment.</li><li>Only VIP level members (VIP 1/2/3) in your team are counted.</li></ul>"
+  }
+]
