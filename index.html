@@ -133,6 +133,7 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
+            text-decoration: none;
         }
         .glass-btn:hover {
             background: #e2e8f0;
@@ -755,6 +756,83 @@
             border-radius: 12px;
             cursor: pointer;
         }
+        /* Language Panel */
+        .lang-panel {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        .lang-panel.active {
+            display: flex;
+        }
+        .lang-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+        }
+        .lang-box {
+            position: relative;
+            background: var(--bg-card);
+            border-radius: 24px;
+            padding: 32px 28px;
+            max-width: 340px;
+            width: 90%;
+            box-shadow: var(--shadow-hover);
+            z-index: 10;
+            text-align: center;
+        }
+        .lang-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+        .lang-option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 18px;
+            margin: 8px 0;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: background 0.2s;
+            background: var(--bg-body);
+            border: 1px solid var(--border-light);
+            font-size: 1.1rem;
+            color: var(--text-primary);
+        }
+        .lang-option:hover {
+            background: var(--badge-bg);
+            border-color: var(--badge-color);
+        }
+        .lang-check {
+            font-size: 1.2rem;
+            color: #22c55e;
+        }
+        .lang-close {
+            margin-top: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 40px;
+            background: var(--border-light);
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 0.9rem;
+            width: 100%;
+        }
+        .lang-close:hover {
+            background: var(--badge-color);
+            color: white;
+        }
         @media (max-width: 740px) {
             .card-grid {
                 grid-template-columns: 1fr;
@@ -926,11 +1004,8 @@
             </svg>
             ዝርዝር ሁኔታ
         </button>
-        <button id="headerShareBtn" class="glass-btn" onclick="doShare()">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:18px;height:18px;">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
-            </svg>
-            አጋራ
+        <button class="glass-btn" onclick="toggleLangPanel()" style="text-decoration:none;">
+            🇬🇧 English
         </button>
     </div>
 
@@ -1081,22 +1156,61 @@
         <button id="zoomInBtn" title="አሳጥር">+</button>
     </div>
 </div>
+
+<!-- Language Panel -->
+<div id="langPanel" class="lang-panel">
+    <div class="lang-overlay" onclick="toggleLangPanel()"></div>
+    <div class="lang-box">
+        <div class="lang-title">🌐 ቋንቋ ይምረጡ</div>
+        <div class="lang-option" onclick="switchLang('am')">
+            <span>🇪🇹 አማርኛ</span>
+            <span class="lang-check" id="langCheckAm">✅</span>
+        </div>
+        <div class="lang-option" onclick="switchLang('en')">
+            <span>🇬🇧 English</span>
+            <span class="lang-check" id="langCheckEn"></span>
+        </div>
+        <button class="lang-close" onclick="toggleLangPanel()">✕ ዝጋ</button>
+    </div>
+</div>
+
 <script src="contact-config.js"></script>
 <script>
     (function() {
         // ============================================================
-        // SHARE
+        // LANGUAGE SWITCHER
         // ============================================================
-        function doShare() {
-            var url = window.location.href;
-            if (navigator.share) {
-                navigator.share({ title: document.title, text: 'ፒጂ ኢርን – ዕለታዊ ኮሚሽን። ትዕዛዞችን ያስገቡ እና በየቀኑ ይስሩ።', url: url }).catch(function(){});
-            } else if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(url).then(function() { alert('ሊንኩ ተቀድቷል!'); }).catch(function() { alert('መቀዳት አልተቻለም። እባክዎ በእጅ ይቅዱ፡ ' + url); });
+        function toggleLangPanel() {
+            var panel = document.getElementById('langPanel');
+            if (panel.classList.contains('active')) {
+                panel.classList.remove('active');
             } else {
-                alert('መጋሪያ አይደገፍም። እባክዎ ይህን ሊንክ ይቅዱ፡\n' + url);
+                panel.classList.add('active');
+                var isAmharic = !window.location.pathname.includes('/en/');
+                document.getElementById('langCheckAm').textContent = isAmharic ? '✅' : '';
+                document.getElementById('langCheckEn').textContent = isAmharic ? '' : '✅';
             }
         }
+
+        function switchLang(lang) {
+            if (lang === 'am') {
+                window.location.href = '/';
+            } else if (lang === 'en') {
+                window.location.href = '/en/';
+            }
+        }
+
+        window.toggleLangPanel = toggleLangPanel;
+        window.switchLang = switchLang;
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                var panel = document.getElementById('langPanel');
+                if (panel.classList.contains('active')) {
+                    panel.classList.remove('active');
+                }
+            }
+        });
 
         // ============================================================
         // LIGHTBOX
@@ -1166,12 +1280,10 @@
             lightbox.classList.remove('dragging');
         }
 
-        // 暴露到全局供 onclick 调用
         window.openLightbox = openLightbox;
         window.closeLightbox = closeLightbox;
         window.showDetail = showDetail;
         window.backToHome = backToHome;
-        window.doShare = doShare;
 
         if (zoomInBtn) zoomInBtn.addEventListener('click', function(e) {
             e.stopPropagation();
@@ -1363,6 +1475,7 @@
             </div></div>`;
             return html;
         }
+
         // ============================================================
         // ALL_CARDS
         // ============================================================
