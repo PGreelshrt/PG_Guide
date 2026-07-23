@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>PG Earn – Daily Commission</title>
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
     <meta property="og:title" content="PG Earn – Daily Commission">
     <meta property="og:description" content="PG Guide Center – Platform overview, security, deposit/withdrawal rules, and step-by-step guides. 8 years stable, transparent, and legal operation.">
     <meta property="og:type" content="website">
@@ -120,6 +117,11 @@
             display: flex;
             gap: 16px;
             margin: 8px 0 32px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--bg-body);
+            padding: 8px 0;
         }
         .glass-btn {
             flex: 1;
@@ -843,6 +845,10 @@
             .detail-title {
                 font-size: 1.5rem;
             }
+            .header h1 {
+                font-size: 1.3rem;
+                gap: 4px;
+            }
             .intro-section {
                 padding: 20px 16px;
             }
@@ -1195,10 +1201,10 @@
         }
 
         function switchLang(lang) {
-    if (lang === 'am') {
-        window.location.href = '/PG_Guide/';
-    } else if (lang === 'en') {
-        window.location.href = '/PG_Guide/en/';
+            if (lang === 'am') {
+                window.location.href = '/';
+            } else if (lang === 'en') {
+                window.location.href = '/en/';
             }
         }
 
@@ -1608,6 +1614,7 @@
             if (!article) return;
             isTransitioning = true;
             savedScrollY = window.scrollY;
+            document.querySelector('.bot-banner').style.display = 'none'; 
             
             let actionsHtml = '';
             if (articleId === 'contact-manager') {
@@ -1661,6 +1668,7 @@
             setTimeout(() => {
                 detailContainer.classList.add('hidden');
                 homeContainer.classList.remove('hidden');
+                document.querySelector('.bot-banner').style.display = 'block';
                 detailContainer.classList.remove('view-exit');
                 if (savedScrollY) window.scrollTo({ top: savedScrollY, behavior: 'auto' });
                 if (location.hash) {
@@ -1758,11 +1766,11 @@
         // LOAD DATA AND START
         // ============================================================
         Promise.all([
-            fetch('data/cards.json?t=' + Date.now()).then(res => {
+            fetch('../data/cards.json?t=' + Date.now()).then(res => {
                 if (!res.ok) throw new Error('Failed to load cards.json');
                 return res.json();
             }),
-            fetch('data/activities.json?t=' + Date.now()).then(res => {
+            fetch('../data/activities.json?t=' + Date.now()).then(res => {
                 if (!res.ok) return [];
                 return res.json();
             }).catch(() => [])
