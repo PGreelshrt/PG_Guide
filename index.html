@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>ፒጂ ኢርን – ዕለታዊ ኮሚሽን</title>
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
     <meta property="og:title" content="ፒጂ ኢርን – ዕለታዊ ኮሚሽን">
     <meta property="og:description" content="የፒጂ መመሪያ ማዕከል – የመድረክ መግለጫ፣ ደህንነት፣ የተቀማጭ/መውጫ ህጎች እና ደረጃ በደረጃ መመሪያዎች። 8 ዓመታት የተረጋጋ፣ ግልጽ እና ህጋዊ አሰራር።">
     <meta property="og:type" content="website">
@@ -120,6 +117,11 @@
             display: flex;
             gap: 16px;
             margin: 8px 0 32px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--bg-body);
+            padding: 8px 0;
         }
         .glass-btn {
             flex: 1;
@@ -844,6 +846,10 @@
             .detail-title {
                 font-size: 1.5rem;
             }
+            .header h1 {
+                font-size: 1.3rem;
+                gap: 4px;
+            }
             .intro-section {
                 padding: 20px 16px;
             }
@@ -1194,26 +1200,26 @@
                 document.getElementById('langCheckEn').textContent = isAmharic ? '' : '✅';
             }
         }
-        
-function switchLang(lang) {
-    if (lang === 'am') {
-        window.location.href = '/PG_Guide/';
-    } else if (lang === 'en') {
-        window.location.href = '/PG_Guide/en/';
-    }
-}
 
-window.toggleLangPanel = toggleLangPanel;
-window.switchLang = switchLang;
-
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-        var panel = document.getElementById('langPanel');
-        if (panel.classList.contains('active')) {
-            panel.classList.remove('active');
+        function switchLang(lang) {
+            if (lang === 'am') {
+                window.location.href = '/';
+            } else if (lang === 'en') {
+                window.location.href = '/en/';
+            }
         }
-    }
-});
+
+        window.toggleLangPanel = toggleLangPanel;
+        window.switchLang = switchLang;
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                var panel = document.getElementById('langPanel');
+                if (panel.classList.contains('active')) {
+                    panel.classList.remove('active');
+                }
+            }
+        });
 
         // ============================================================
         // LIGHTBOX
@@ -1608,6 +1614,8 @@ document.addEventListener('keydown', function(e) {
             if (!article) return;
             isTransitioning = true;
             savedScrollY = window.scrollY;
+           document.querySelector('.bot-banner').style.display = 'none';
+
             
             let actionsHtml = '';
             if (articleId === 'contact-manager') {
@@ -1661,6 +1669,7 @@ document.addEventListener('keydown', function(e) {
             setTimeout(() => {
                 detailContainer.classList.add('hidden');
                 homeContainer.classList.remove('hidden');
+                document.querySelector('.bot-banner').style.display = 'block';
                 detailContainer.classList.remove('view-exit');
                 if (savedScrollY) window.scrollTo({ top: savedScrollY, behavior: 'auto' });
                 if (location.hash) {
