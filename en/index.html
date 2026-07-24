@@ -1200,13 +1200,14 @@
             }
         }
 
-        function switchLang(lang) {
-            if (lang === 'am') {
-                window.location.href = '/PG_Guide/';
-            } else if (lang === 'en') {
-                window.location.href = '/PG_Guide/en/';
-            }
-        }
+function switchLang(lang) {
+    var basePath = window.location.pathname.split('/').slice(0, 2).join('/');
+    if (lang === 'am') {
+        window.location.href = basePath + '/';
+    } else if (lang === 'en') {
+        window.location.href = basePath + '/en/';
+    }
+}
 
         window.toggleLangPanel = toggleLangPanel;
         window.switchLang = switchLang;
