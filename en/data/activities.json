@@ -28,7 +28,7 @@
     "id": "quiz-activity",
     "title": "❓ Quiz Competition",
     "summary": "Participate every Tuesday, Thursday, and Sunday and win",
-    "time": "Every Tuesday, Thursday, and Sunday at 1:00 PM Habesha Time | 7:00 PM UTC+3",
+    "time": "Every Tuesday, Thursday, and Sunday at 7:00 PM UTC+3 | 1:00 PM Habesha Time",
     "status": "Active",
     "content": "<p><strong>📝 Competition Rules:</strong></p><ul><li>Each event includes 10 fun Q&A questions.</li><li>The first three users to answer correctly can receive a 30 ETB bonus.</li></ul><p><strong>💰 How to claim the bonus?</strong></p><p>After the competition ends, you can take a screenshot of the winners' list and send it to the recruitment manager to easily claim your bonus!</p>"
   },
@@ -36,8 +36,8 @@
     "id": "raffle-activity",
     "title": "🎰 Raffle Ticket Activity",
     "summary": "Buy a 20 ETB ticket and win 1,000 ETB",
-    "time": "Every Saturday at 15:00 (UTC+3) | 3:00 AM Habesha Time",
+    "time": "Every Saturday at 15:00 (UTC+3) | 9:00 AM Habesha Time",
     "status": "Active",
-    "content": "<p><strong>🎫 How to participate:</strong></p><ul><li>Every participation ticket has a chance to win 1,000 ETB.</li><li>The cost of purchasing one ticket is 20 ETB.</li><li>Even if you do not win, the 20 ETB will be refunded to you after the event ends.</li></ul><p><strong>📢 When will the results be announced?</strong></p><p>The winning order numbers will be announced in the group next Saturday at 15:00 (UTC+3) | 3:00 AM Habesha Time.</p><p><strong>⏰ Ticket Expiration</strong></p><p>The raffle tickets you purchased have an expiration time. After expiration, the funds will be automatically refunded to your PG mall account balance.</p>"
+    "content": "<p><strong>🎫 How to participate:</strong></p><ul><li>Every participation ticket has a chance to win 1,000 ETB.</li><li>The cost of purchasing one ticket is 20 ETB.</li><li>Even if you do not win, the 20 ETB will be refunded to you after the event ends.</li></ul><p><strong>📢 When will the results be announced?</strong></p><p>The winning order numbers will be announced in the group next Saturday at 15:00 (UTC+3) | 9:00 AM Habesha Time.</p><p><strong>⏰ Ticket Expiration</strong></p><p>The raffle tickets you purchased have an expiration time. After expiration, the funds will be automatically refunded to your PG mall account balance.</p>"
   }
 ]
