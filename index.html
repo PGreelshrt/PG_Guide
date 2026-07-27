@@ -1203,7 +1203,7 @@
 
 function switchLang(lang) {
     var basePath = window.location.pathname.split('/').slice(0, 2).join('/');
-    var currentHash = window.location.hash;  
+    var currentHash = window.location.hash;   
     if (lang === 'am') {
         window.location.href = basePath + '/' + currentHash;
     } else if (lang === 'en') {
