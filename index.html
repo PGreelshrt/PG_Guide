@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>ፒጂ ኢርን – ዕለታዊ ኮሚሽን</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <meta property="og:title" content="ፒጂ ኢርን – ዕለታዊ ኮሚሽን">
     <meta property="og:description" content="የፒጂ መመሪያ ማዕከል – የመድረክ መግለጫ፣ ደህንነት፣ የተቀማጭ/መውጫ ህጎች እና ደረጃ በደረጃ መመሪያዎች። 8 ዓመታት የተረጋጋ፣ ግልጽ እና ህጋዊ አሰራር።">
     <meta property="og:type" content="website">
@@ -761,7 +764,6 @@
             border-radius: 12px;
             cursor: pointer;
         }
-        /* Language Panel */
         .lang-panel {
             position: fixed;
             top: 0;
@@ -1201,15 +1203,15 @@
             }
         }
 
-function switchLang(lang) {
-    var basePath = window.location.pathname.split('/').slice(0, 2).join('/');
-    var currentHash = window.location.hash;   
-    if (lang === 'am') {
-        window.location.href = basePath + '/' + currentHash;
-    } else if (lang === 'en') {
-        window.location.href = basePath + '/en/' + currentHash;
-    }
-}
+        function switchLang(lang) {
+            var basePath = window.location.pathname.split('/').slice(0, 2).join('/');
+            var currentHash = window.location.hash;
+            if (lang === 'am') {
+                window.location.href = basePath + '/' + currentHash;
+            } else if (lang === 'en') {
+                window.location.href = basePath + '/en/' + currentHash;
+            }
+        }
 
         window.toggleLangPanel = toggleLangPanel;
         window.switchLang = switchLang;
@@ -1464,11 +1466,17 @@ function switchLang(lang) {
         }
 
         function buildActivityDetailHTML(act) {
+            var iconSvg = getCardIcon(act.id) || '';
             let html = `<div style="max-width:600px;margin:0 auto;">`;
             const statusClass = act.status === 'በሂደት ላይ ነው' ? '' : 'ended';
+            const statusText = act.status || 'በሂደት ላይ ነው';
             html += `<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
                 <span style="font-size:0.9rem;color:var(--text-muted);">📅 ${act.time || 'ቋሚ'}</span>
-                <span class="activity-status ${statusClass}" style="font-size:0.8rem;padding:4px 16px;">${act.status || 'በሂደት ላይ ነው'}</span>
+                <span class="activity-status ${statusClass}" style="font-size:0.8rem;padding:4px 16px;">${statusText}</span>
+            </div>`;
+            html += `<div class="activity-detail-header" style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+                <span style="display:flex;align-items:center;gap:6px;">${iconSvg}</span>
+                <h2 style="font-size:1.5rem;font-weight:700;color:var(--text-primary);margin:0;">${act.title}</h2>
             </div>`;
             if (act.image) {
                 html += `<div class="activity-detail-image">
@@ -1537,7 +1545,12 @@ function switchLang(lang) {
                 'order-block-reasons': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>`,
                 'letter-to-team': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>`,
                 'pg-rules': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>`,
-                'contact-manager': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" /></svg>`
+                'contact-manager': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" /></svg>`,
+                'invite-activity': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>`,
+                'upgrade-activity': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>`,
+                'team-salary-activity': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`,
+                'quiz-activity': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.625 9.75a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 0 1 .778-.332 48.294 48.294 0 0 0 5.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" /></svg>`,
+                'raffle-activity': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" /></svg>`
             };
             return icons[cardId] || `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg>`;
         }
@@ -1616,8 +1629,7 @@ function switchLang(lang) {
             if (!article) return;
             isTransitioning = true;
             savedScrollY = window.scrollY;
-           document.querySelector('.bot-banner').style.display = 'none';
-
+            document.querySelector('.bot-banner').style.display = 'none';
             
             let actionsHtml = '';
             if (articleId === 'contact-manager') {
