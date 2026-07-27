@@ -39,7 +39,7 @@
     "title": "Why Deposit?",
     "meta": "Deposit = Working Capital (refundable)",
     "desc": "Your deposit is fully refundable working capital",
-    "content": "<p>The deposit is <strong>not a \"fee\"</strong> – it's working capital to support your order flow.</p><p>Each order requires corresponding funds to complete the process. Your deposit stays in your account as a tool for your daily tasks. Every task you complete earns a commission. When you upgrade or withdraw, the deposit is fully refunded.</p><div class=\"warning-box\">✅ <strong>PG is a job, not an investment. Completing your daily orders is the basis of your income — you earn by working, not by waiting.</strong></div>"
+    "content": "<p>The deposit recharged to your PG Mall account is not a \"fee,\" but operational capital used to support your order flow.</p><p>Each order requires corresponding funds to be completed. The system will automatically process the orders, and once completed, the funds will be returned to your PG Mall account balance.</p><p>Your entire deposit will remain in your account as the source of funds for your daily tasks. This fund will be recycled until your level's validity period expires, at which time it will be fully refunded to you.</p><p>Completing orders daily is the foundation for you to earn a salary. When you upgrade your level, the deposit from your previous level will also be fully refunded to you at the same time.</p>"
   },
   {
     "id": "task-steps",
