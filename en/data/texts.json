@@ -26,14 +26,15 @@
       "💡 Sorry, this draw did not win. To speed up progress toward the 10,000 ETB guarantee, you can earn extra draws by expanding your team. Contact your Hiring Manager.",
       "👑 Dear premium member, no jackpot this time. Lottery is an extra benefit; your daily work and weekly salary remain your core wealth.",
       "🛡️ This draw is over, no prize. The platform strictly verifies all claims. When the guarantee is met, your prize will be 100% delivered to your account."
-    ]
+    ],
     "guarantee_progress": "📊 Guarantee Progress:",
     "guarantee_label_10": "🔹 【10 Draws · 50 ETB】",
     "guarantee_label_50": "🔸 【50 Draws · 10,000 ETB】",
     "guarantee_label_100": "👑 【100 Draws · 100,000 ETB】",
     "claimed_status": "✅ Claimed",
     "draws_left": "more draws to guarantee"
-  },
+  }
+
   "draw": {
     "drawing": "🎰 Drawing...",
     "no_draws": "❌ You have no draws left. Earn more via check-ins, invites, or upgrades.",
