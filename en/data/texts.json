@@ -106,7 +106,12 @@
     "time": "Time:",
     "summary": "Total: X unread. Use /feedback_read <ID> to mark as read.",
     "invalid_id": "❌ Invalid ID.",
-    "read_success": "✅ Feedback ID X marked as read."
+    "read_success": "✅ Feedback ID X marked as read.",
+    "my_title": "📋 Your feedback records:",
+    "my_empty": "📭 You have not submitted any feedback yet.",
+    "my_status_pending": "⏳ Pending",
+    "my_status_read": "✅ Processed",
+    "my_total": "Total: X records"
   },
   "tags": {
     "lost": "🔴 Lost",
