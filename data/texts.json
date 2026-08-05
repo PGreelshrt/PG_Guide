@@ -106,7 +106,12 @@
     "time": "ሰዓት፦",
     "summary": "አጠቃላይ፦ X ያልተነበቡ። /feedback_read <ID> ይጠቀሙ።",
     "invalid_id": "❌ ልክ ያልሆነ ID።",
-    "read_success": "✅ አስተያየት ID X እንደተነበበ ምልክት ተደርጎበታል።"
+    "read_success": "✅ አስተያየት ID X እንደተነበበ ምልክት ተደርጎበታል።",
+    "my_title": "📋 የእርስዎ አስተያየቶች፦",
+    "my_empty": "📭 ምንም አስተያየት አልሰጡም።",
+    "my_status_pending": "⏳ በመጠባበቅ ላይ",
+    "my_status_read": "✅ ተስተናግዷል",
+    "my_total": "አጠቃላይ፦ X አስተያየቶች"
   },
   "tags": {
     "lost": "🔴 የጠፋ",
