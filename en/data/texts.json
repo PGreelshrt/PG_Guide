@@ -156,6 +156,7 @@
   "command_center": {
     "title": "🧩 Command Center",
     "subtitle": "Click a button below to use the function:",
+    "btn_myfeedbacks": "📋 My Feedback",
     "btn_lucky": "🎰 Lucky Draw",
     "btn_checkin": "✅ Check-in",
     "btn_invite": "🔗 Invite",
