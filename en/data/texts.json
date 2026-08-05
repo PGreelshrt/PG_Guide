@@ -98,6 +98,7 @@
   },
   "feedback": {
     "prompt": "📝 Please send your feedback: /feedback <your message>",
+    "format_only": "📝 Please send only /feedback, then wait for the prompt and send your feedback content.",
     "thank_you": "✅ Thank you for your feedback! We'll process it soon.",
     "unread_title": "📋 Unread feedback:",
     "user": "User:",
