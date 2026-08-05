@@ -1,31 +1,31 @@
 {
   "lottery": {
-    "title": "🎰 【VIP Lottery Center】",
-    "balance": "💎 Your current draw balance:",
-    "jackpots": "🎁 Lifetime Guaranteed Jackpots:",
+    "title": "🎰 【VIP Lucky Draw Center】",
+    "balance": "💎 Your current lucky draw balance:",
+    "jackpots": "🎁 Lifetime Guaranteed Rewards:",
     "guarantee_10": "【10 Draws · 50 ETB】",
     "guarantee_50": "【50 Draws · 10,000 ETB】",
     "guarantee_100": "【100 Draws · 100,000 ETB】",
     "claimed": "✅ Claimed",
     "available": "🎯 Available!",
-    "note": "(Note: Each jackpot can be claimed once per lifetime.)",
-    "more_draws": "🚀 Need more draws? Contact your Hiring Manager:",
-    "rule1": "1️⃣ 7 consecutive check-ins (auto-reward 1 draw)",
-    "rule2": "2️⃣ Invite 1 new VIP member (reward 1 draw)",
-    "rule3": "3️⃣ Upgrade your membership (up to 4 draws!)",
-    "use_draw": "🎰 Use 1 draw to spin",
-    "contact_manager": "👥 Contact Hiring Manager for more draws",
-    "start_draw": "🎰 Start Draw",
+    "note": "(Note: Each reward can be claimed once per lifetime.)",
+    "more_draws": "🚀 Need more chances? Contact your Hiring Manager:",
+    "rule1": "1️⃣ 7 consecutive check-ins (+1 chance)",
+    "rule2": "2️⃣ Invite 1 new VIP member (+1 chance)",
+    "rule3": "3️⃣ Upgrade membership (up to +4 chances!)",
+    "use_draw": "🎰 Use 1 chance to try",
+    "contact_manager": "👥 Contact Hiring Manager for more chances",
+    "start_draw": "🎰 Try Your Luck",
     "continue_draw": "🎰 Continue",
-    "center": "🏠 Lottery Center",
+    "center": "🏠 Lucky Draw Center",
     "back": "🔙 Main Menu",
     "contact": "👥 Contact Hiring Manager",
     "empty_messages": [
       "ℹ️ No prize this time. All data is automatically calculated, fair and transparent. Stay active and look forward to next week's benefits.",
-      "📊 No prize this round, your draw count has been recorded. Each non-winning draw brings you closer to the 10,000 ETB and 100,000 ETB guaranteed jackpots.",
-      "💡 Sorry, this draw did not win. To speed up progress toward the 10,000 ETB guarantee, you can earn extra draws by expanding your team. Contact your Hiring Manager.",
-      "👑 Dear premium member, no jackpot this time. Lottery is an extra benefit; your daily work and weekly salary remain your core wealth.",
-      "🛡️ This draw is over, no prize. The platform strictly verifies all claims. When the guarantee is met, your prize will be 100% delivered to your account."
+      "📊 No prize this round, your draw count has been recorded.",
+      "💡 Sorry, this draw did not win. Earn extra chances by expanding your team.",
+      "👑 Dear premium member, no prize this time. Your daily work and weekly salary remain your core wealth.",
+      "🛡️ This draw is over, no prize. When the guarantee is met, your prize will be 100% delivered."
     ],
     "guarantee_progress": "📊 Guarantee Progress:",
     "guarantee_label_10": "🔹 【10 Draws · 50 ETB】",
@@ -33,21 +33,22 @@
     "guarantee_label_100": "👑 【100 Draws · 100,000 ETB】",
     "claimed_status": "✅ Claimed",
     "draws_left": "more draws to guarantee"
-  }
-}
-
+  },
   "draw": {
     "drawing": "🎰 Drawing...",
-    "no_draws": "❌ You have no draws left. Earn more via check-ins, invites, or upgrades.",
+    "no_draws": "❌ You have no chances left. Earn more via check-ins, invites, or upgrades.",
     "register_first": "❌ Please register first with /start.",
     "checkin_success": "✅ Check-in successful! Consecutive: X day(s).",
-    "checkin_7": "🎉 7 consecutive check-ins! You earned 1 draw chance!",
-    "current_draws": "Current draws: X",
-    "checkin_progress": "📌 Check in X more days to earn 1 draw chance.",
+    "checkin_7": "🎉 7 consecutive check-ins! You earned 1 chance!",
+    "current_draws": "Current chances: X",
+    "checkin_progress": "📌 Check-in progress: X/7",
     "checkin_today": "✅ You already checked in today. Come back tomorrow!",
     "checkin_reward_recent": "📌 You have already received a reward within the last 7 days. Keep going!",
-    "win_cash": "🎉 You won X ETB cash! Contact Hiring Manager (Lucia/Linda) with your invite code to claim.",
-    "win_voucher": "🎉 You won a X ETB upgrade voucher! Use it when upgrading. Provide invite code to claim."
+    "win_cash": "🎉 You won X ETB cash! Contact Hiring Manager with your invite code to claim.",
+    "win_voucher": "🎉 You won a X ETB upgrade voucher! Provide invite code to claim.",
+    "remaining": "💎 Remaining chances: X",
+    "checkin_missed": "⚠️ You missed X day(s). Consecutive days adjusted to X.",
+    "checkin_streak_label": "📌 Check-in Progress"
   },
   "vouchers": {
     "title": "📋 Your pending rewards:",
@@ -69,17 +70,17 @@
       "format": "⚠️ Format: /add_draws <invite_code> <count>",
       "positive_int": "❌ Count must be a positive integer.",
       "user_not_found": "❌ User with invite code X not found.",
-      "success": "✅ Added X draws to user Y. New balance: Z",
-      "user_notify": "🎉 You received X draw chances! Current balance: Y",
+      "success": "✅ Added X chances to user Y. New balance: Z",
+      "user_notify": "🎉 You received X lucky draw chances! Current balance: Y",
       "user_notify_action": "Use /draw to start."
     },
     "claim": {
-      "format": "⚠️ Format: /claim <invite_code> <amount>",
+      "format": "⚠️ Format: /claim <invite_code> <amount> <type>",
       "positive_int": "❌ Amount must be a positive integer.",
       "no_reward": "❌ No pending reward of X ETB for this user.",
       "success": "✅ Claimed X ETB reward for user Y (Z).",
-      "user_cash": "🎉 Congratulations! Your X ETB cash bonus has been credited to your PG account!",
-      "user_voucher": "🎉 Congratulations! Your X ETB upgrade voucher has been successfully claimed! You can use it when upgrading.",
+      "user_cash": "🎉 Congratulations! Your X ETB cash bonus has been credited to your account!",
+      "user_voucher": "🎉 Congratulations! Your X ETB upgrade voucher has been successfully claimed!",
       "claimed_at": "Claimed at:",
       "contact": "If you have questions, contact the Hiring Manager."
     }
@@ -114,10 +115,60 @@
     "silent": "⚫ Silent"
   },
   "push": {
-    "quiz": "📢 Quiz Activity Reminder! Join today's quiz for a chance to win 30 ETB! Send /list for details.",
+    "quiz": "📢 Quiz Activity Reminder! Join today's quiz! Send /list for details.",
     "salary": "💰 Fixed Salary Reminder! This month's salary is ready. Send /list to view details."
   },
   "menu": {
-    "lottery": "🎰 Lottery Center"
+    "title": "Main Menu — Please select an option:",
+    "activities": "🎁 Activities",
+    "lottery": "🎰 Lucky Draw",
+    "checkin": "✅ Check-in",
+    "invite": "🔗 Invite Code",
+    "commands": "📖 Command Center",
+    "manager": "📞 Manager",
+    "lang": "🌐 Language",
+    "back": "🔙 Main Menu",
+    "feedback": "📝 Feedback",
+    "channel": "📢 Channel"
+  },
+  "invite": {
+    "title": "📎 Invite Link Generator",
+    "prompt": "Please send your 6-digit invite code.",
+    "tip": "💡 Quick tip: Send /Link 123456 to generate directly.",
+    "tutorial_btn": "📖 How to get your invite code?",
+    "existing_title": "📎 Your invite link:",
+    "copy_btn": "📋 Copy Link",
+    "reset_btn": "🔄 Get New Code",
+    "support_btn": "📞 Contact Support",
+    "success": "✅ Invite link generated:",
+    "invalid_code": "❌ Please provide a valid 6-digit invite code.",
+    "replace_prompt": "⚠️ You already have a saved invite code. Click below to replace it:",
+    "replace_confirm": "✅ Save New Code",
+    "replace_cancel": "🔙 Cancel",
+    "reset_success": "✅ Your invite code has been cleared. Please send a new 6-digit code.",
+    "code_taken": "❌ Invite code {code} is already taken by another user. Please verify.",
+    "tutorial_caption": "📖 How to view your invite code\n\n1. Open your account page\n2. Find \"Invite Code\"\n3. Copy the 6-digit code\n\n🔗 [Click here](https://pgmall1234.com/user)"
+  },
+  "contact": {
+    "title": "📞 Please select a hiring manager:"
+  },
+  "command_center": {
+    "title": "🧩 Command Center",
+    "subtitle": "Click a button below to use the function:",
+    "btn_lucky": "🎰 Lucky Draw",
+    "btn_checkin": "✅ Check-in",
+    "btn_invite": "🔗 Invite",
+    "btn_vouchers": "📋 My Rewards",
+    "btn_feedback": "📝 Feedback",
+    "btn_channel": "📢 Channel",
+    "btn_tutorial": "📖 How to Get Code",
+    "btn_back": "🔙 Main Menu"
+  },
+  "error": {
+    "database": "❌ Database error. Please try /start again.",
+    "system": "❌ System error. Please try again later.",
+    "not_registered": "❌ Please register first with /start.",
+    "unknown_command": "❌ Unknown command.",
+    "unclear": "I'm not sure what you mean. Please see the options below:"
   }
 }
