@@ -111,7 +111,11 @@
     "my_empty": "📭 You have not submitted any feedback yet.",
     "my_status_pending": "⏳ Pending",
     "my_status_read": "✅ Processed",
-    "my_total": "Total: X records"
+    "my_total": "Total: X records",
+    "my_label_content": "Content:",
+    "my_label_status": "Status:",
+    "my_label_time": "Time:",
+    "my_label_empty_content": "(empty)"
   },
   "tags": {
     "lost": "🔴 Lost",
