@@ -111,7 +111,11 @@
     "my_empty": "📭 ምንም አስተያየት አልሰጡም።",
     "my_status_pending": "⏳ በመጠባበቅ ላይ",
     "my_status_read": "✅ ተስተናግዷል",
-    "my_total": "አጠቃላይ፦ X አስተያየቶች"
+    "my_total": "አጠቃላይ፦ X አስተያየቶች",
+    "my_label_content": "ይዘት፦",
+    "my_label_status": "ሁኔታ፦",
+    "my_label_time": "ሰዓት፦",
+    "my_label_empty_content": "(ባዶ)"
   },
   "tags": {
     "lost": "🔴 የጠፋ",
