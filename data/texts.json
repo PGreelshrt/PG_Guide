@@ -202,7 +202,7 @@
     "admin_activate_success": "✅ ተጠቃሚ {code} በተሳካ ሁኔታ ነቅቷል።",
     "admin_reject_format": "⚠️ ፎርማት: /reject <የጋበዣ ኮድ>\nምሳሌ: /reject 123456",
     "admin_reject_success": "✅ የተጠቃሚ {code} የማንቂያ ጥያቄ ውድቅ ተደርጓል።",
-    "admin_pending_title": "📋 ግምገማ የሚጠብቁ የማንቂያ ጥያቄዎች:\n\nበአጠቃላይ X ተጠቃሚዎች መነቃትን እየጠበቁ ነው።\nለማጽደቅ /activate <የጋበዣ ኮድ> ን፣ ወይም ውድቅ ለማድረግ /reject <የጋበዣ ኮድ> ን ይጠቀሙ።",
+    "admin_pending_title": "📋 ግምገማ የሚጠብቁ የማንቂያ ጥያቄዎች:\n\nበአጠቃላይ X ተጠቃሚዎች መነቃትን እየጠበቁ ነው።\n\n/activate \n/reject ",
     "admin_pending_item": "{ተራ ቁጥር}. የጋበዣ ኮድ: {code}\n   ተጠቃሚ: {username} (ID: {chat_id})\n   የማመልከቻ ጊዜ: {date}",
     "admin_pending_empty": "📭 በአሁኑ ጊዜ ግምገማ የሚጠብቅ ምንም የማንቂያ ጥያቄ የለም።",
     "bind_first": "❌ እባክዎ በመጀመሪያ ባለ 6 አሃዝ የጋበዣ ኮድ በመላክ የጋበዣ ኮድዎን ያያይዙ።"
