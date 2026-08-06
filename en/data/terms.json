@@ -1,0 +1,229 @@
+{
+  "meta": {
+    "version": "V1.0",
+    "effective_date": "August 6, 2026",
+    "operator": "PG_ET_bot",
+    "scope": "All registered users of the Platform's Telegram Bot"
+  },
+  "chapters": [
+    {
+      "number": "I",
+      "title": "General Provisions",
+      "articles": [
+        {
+          "number": 1,
+          "content": "This agreement aims to clarify the rights and obligations between the Platform and users, and to regulate the use of various services provided by the Platform's Telegram Bot (hereinafter referred to as 'the Bot'). By completing the registration through the /start command, users are deemed to have read, understood, and voluntarily accepted all the terms of this agreement."
+        },
+        {
+          "number": 2,
+          "content": "The Platform reserves the right to amend this agreement at any time. The amended agreement will be announced within the Bot or through official channels and will automatically take effect from the effective date stated in the announcement. If users do not agree to the amendments, they should immediately stop using the Bot's services; continued use shall be deemed as acceptance of the amended agreement."
+        },
+        {
+          "number": 3,
+          "content": "All services, welfare activities, and lucky draw mechanisms under this agreement are auxiliary incentive measures provided by the Platform for active users, and do not constitute statutory or contractual rights of the users. The Platform has the right to adjust, suspend, or terminate the activity rules based on operational needs, with prior announcement within the Bot."
+        }
+      ]
+    },
+    {
+      "number": "II",
+      "title": "Service Content",
+      "articles": [
+        {
+          "number": 4,
+          "content": "The Bot provides users with the following basic services: 1. User registration and personal information management; 2. Multi-language interface switching (English / Amharic); 3. Publishing and viewing of platform activity information; 4. Official announcements and channel access; 5. User feedback and customer service communication channels."
+        },
+        {
+          "number": 5,
+          "content": "The Bot provides registered users with an incentive lucky draw service based on task completion (hereinafter referred to as 'Lucky Draw'), the specific rules of which are detailed in Chapter III of this agreement."
+        },
+        {
+          "number": 6,
+          "content": "The Bot provides users with the function of generating and binding invitation codes, which is used to associate referral relationships and issue invitation rewards."
+        }
+      ]
+    },
+    {
+      "number": "III",
+      "title": "Detailed Rules of Lucky Draw",
+      "sections": [
+        {
+          "id": "section_1",
+          "title": "Acquisition of Lucky Draw Eligibility",
+          "articles": [
+            {
+              "number": 7,
+              "content": "Users must meet all the following conditions to be eligible for the lucky draw: 1. Completed the Bot registration through the /start command; 2. The account is in a normal state and has not been suspended or restricted by the platform; 3. Have a valid number of lucky draw chances (hereinafter referred to as 'Lucky Draw Balance')."
+            },
+            {
+              "number": 8,
+              "content": "Lucky Draw Balance can be obtained through the following methods: 1. Daily Check-in: 7 consecutive days → +1 chance. 2. Membership Level Upgrade Reward: Upgrade to VIP1 → +1, VIP2 → +2, VIP3 → +4. 3. Invitation Reward: Each friend who joins as VIP → +1 chance."
+            },
+            {
+              "number": 9,
+              "content": "The Lucky Draw Balance is restricted to the account's own use, and cannot be transferred, exchanged for cash, or withdrawn. The Lucky Draw Balance has no expiration date, but the Platform reserves the right to set an expiration date and announce it in advance based on operational needs."
+            }
+          ]
+        },
+        {
+          "id": "section_2",
+          "title": "Lucky Draw Mechanism",
+          "articles": [
+            {
+              "number": 10,
+              "content": "When a user enters the Lucky Draw Center of the Bot and clicks the draw button, it is deemed as initiating a valid lucky draw request. The system will immediately deduct 1 lucky draw balance and execute the lucky draw."
+            },
+            {
+              "number": 11,
+              "content": "The lucky draw results are generated randomly and instantly by the system's background program. The results shall be subject to the system records and are irrevocable and non-appealable."
+            },
+            {
+              "number": 12,
+              "content": "Each time a lucky draw is performed, the system will automatically record and accumulate the user's 'Total Lucky Draw Count'. The total lucky draw count is valid for life and will not be cleared to zero."
+            }
+          ]
+        },
+        {
+          "id": "section_3",
+          "title": "Prize Settings and Probabilities",
+          "articles": [
+            {
+              "number": 13,
+              "content": "The categories, names, and trigger probabilities of the prizes set for the Platform's Lucky Draw are as follows (these probabilities are theoretical values of the system design, and the actual results are subject to the random output of each individual draw):"
+            },
+            {
+              "number": 13a,
+              "content": "Cash Rewards: 10 ETB (45.000%), 50 ETB (9.000%), 100 ETB (4.500%), 500 ETB (0.900%), 1,000 ETB (0.450%), 10,000 ETB (0.045%), 50,000 ETB (0.009%)."
+            },
+            {
+              "number": "13b",
+              "content": "Upgrade Vouchers: 100 ETB (6.000%), 500 ETB (1.200%), 1,000 ETB (0.600%), 5,000 ETB (0.120%), 20,000 ETB (0.030%), 50,000 ETB (0.012%)."
+            },
+            {
+              "number": "13c",
+              "content": "Special Rewards: VIP1 Quota ×5 (0.010%), Free Upgrade (0.004%). Not Won: 32.120%."
+            },
+            {
+              "number": 14,
+              "content": "The actual winning probability of each prize will fluctuate slightly according to the user's total lucky draw count. The general trend is: the more times a user draws, the higher the comprehensive probability of obtaining high-value prizes. The specific fluctuation rules belong to the core commercial algorithm of the Platform and will not be disclosed to the public."
+            }
+          ]
+        },
+        {
+          "id": "section_4",
+          "title": "Guaranteed Mechanism",
+          "articles": [
+            {
+              "number": 15,
+              "content": "To protect user rights, the Platform establishes a lifetime guaranteed reward mechanism. When a user's total lucky draw count reaches the following milestones, they can claim the corresponding guaranteed reward: 10 draws → 50 ETB, 50 draws → 10,000 ETB, 100 draws → 100,000 ETB. Each guarantee can be claimed once per lifetime."
+            },
+            {
+              "number": 16,
+              "content": "The guaranteed rewards and normal lucky draw prizes are independent of each other. After reaching a milestone, regardless of whether the user has previously won a reward of that amount through the draw, they can claim the corresponding guaranteed reward. The guaranteed reward for the same milestone can only be claimed once per lifetime and cannot be claimed repeatedly."
+            },
+            {
+              "number": 17,
+              "content": "The method of claiming the guaranteed reward is the same as that for ordinary prizes (see Chapter IV for details), but users need to proactively contact the Platform administrator for verification and issuance after reaching the milestone."
+            }
+          ]
+        },
+        {
+          "id": "section_5",
+          "title": "Prize Claiming Rules",
+          "articles": [
+            {
+              "number": 18,
+              "content": "After winning, the corresponding reward will be automatically deposited into the user's 'Pending Rewards' list (which can be viewed through the /vouchers command)."
+            },
+            {
+              "number": 19,
+              "content": "The process for users to claim rewards is as follows: 1. View all pending rewards through /vouchers; 2. Contact the Platform's recruitment managers (Lucia / Linda); 3. Provide one's own 6-digit invitation code and the amount of the prize to be claimed; 4. After verification by the administrator, cash rewards will be issued to the user's account, and upgrade vouchers will be deducted when the user upgrades."
+            },
+            {
+              "number": 20,
+              "content": "Users must contact the administrator to claim the rewards in a timely manner after obtaining the pending rewards. The Platform currently does not set a deadline for claiming, but reserves the right to set a claim deadline and announce it in advance based on operational needs."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "IV",
+      "title": "User Rights and Obligations",
+      "articles": [
+        {
+          "number": 21,
+          "content": "Users have the right to: 1. Use all functions of the Bot under the premise of complying with this agreement; 2. Query their own lucky draw balance, lucky draw records, and pending rewards; 3. Submit opinions and suggestions to the Platform through the /feedback command; 4. View the prize list and activity information publicized within the Bot."
+        },
+        {
+          "number": 22,
+          "content": "Users shall comply with the following obligations: 1. Do not use the Bot for any illegal acts, violations of regulations, or infringements of the rights and interests of others; 2. Do not tamper with or interfere with the normal operation of the Bot or the lucky draw results by any technical means; 3. Do not falsely use the identity of others to register for or use the Bot services; 4. Do not maliciously submit feedback repeatedly or abuse customer service communication channels; 5. Do not misinterpret the welfare activities of the Platform as gambling, betting, or any form of financial investment behavior."
+        }
+      ]
+    },
+    {
+      "number": "V",
+      "title": "Disclaimer Clauses",
+      "articles": [
+        {
+          "number": 23,
+          "content": "The Platform shall not bear any responsibility for the following situations: 1. Service interruption or data loss caused by force majeure (including but not limited to natural disasters, war, strikes, government actions, cyber attacks, telecom operator failures, etc.); 2. Failure, interruption, or restriction of force majeure or third-party service providers (including but not limited to communication service providers, cloud service providers, third-party API service providers, etc.), resulting in the Bot failing to operate normally or data loss; 3. Losses caused by the users' own reasons (including but not limited to operational errors, disclosure of account information, failure to comply with this agreement, etc.); 4. Any emotional loss or opportunity cost arising from the lucky draw results not meeting user expectations; 5. Expiration of rewards due to users' failure to claim them in a timely manner (if any)."
+        },
+        {
+          "number": 24,
+          "content": "The welfare lucky draw of the Platform is an auxiliary user incentive activity and is subject to the laws of the Federal Democratic Republic of Ethiopia. This activity does not constitute any form of gaming or gambling behavior, nor is it bound by relevant gambling regulations."
+        }
+      ]
+    },
+    {
+      "number": "VI",
+      "title": "Modification and Termination of the Agreement",
+      "articles": [
+        {
+          "number": 25,
+          "content": "This agreement is updated irregularly. Updated versions will be announced within the Bot and will not be notified to each user individually. Users are obligated to periodically review the latest version of this agreement."
+        },
+        {
+          "number": 26,
+          "content": "Users may terminate this agreement at any time by ceasing to use the Bot. The Platform reserves the right to suspend or terminate services to users who violate this agreement, without prior notice."
+        }
+      ]
+    },
+    {
+      "number": "VII",
+      "title": "Dispute Resolution",
+      "articles": [
+        {
+          "number": 27,
+          "content": "The conclusion, performance, interpretation, and dispute resolution of this agreement shall be governed by the laws of the location of the Operator."
+        },
+        {
+          "number": 28,
+          "content": "Any dispute arising from or in connection with this agreement shall first be resolved by the parties through friendly negotiation. If negotiation fails, either party has the right to submit the dispute to the court system with jurisdiction over the location of the Operator for resolution through litigation."
+        }
+      ]
+    },
+    {
+      "number": "VIII",
+      "title": "Supplementary Provisions",
+      "articles": [
+        {
+          "number": 29,
+          "content": "The headings of this agreement are for convenience of reading only and do not affect the interpretation and validity of the clauses."
+        },
+        {
+          "number": 30,
+          "content": "This agreement is originally written in English. The Amharic translation is for reference only. In case of any ambiguity between the translation and the original English version, the original English version shall prevail."
+        },
+        {
+          "number": 31,
+          "content": "The use of this Bot by users shall be deemed as having read and agreed to the entire content of this agreement."
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "operator": "PG Group",
+    "contact": "/feedback command within the Bot",
+    "last_revised": "August 6, 2026"
+  }
+}
