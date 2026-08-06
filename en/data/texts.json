@@ -157,7 +157,8 @@
     "replace_cancel": "🔙 Cancel",
     "reset_success": "✅ Your invite code has been cleared. Please send a new 6-digit code.",
     "code_taken": "❌ Invite code {code} is already taken by another user. Please verify.",
-    "tutorial_caption": "📖 How to view your invite code\n\n1. Open your account page\n2. Find \"Invite Code\"\n3. Copy the 6-digit code\n\n🔗 [Click here](https://pgmall1234.com/user)"
+    "tutorial_caption": "📖 How to view your invite code\n\n1. Open your account page\n2. Find \"Invite Code\"\n3. Copy the 6-digit code\n\n🔗 [Click here](https://pgmall1234.com/user)",
+    "bound": "❌ Your invitation code has been bound. If you need to modify it, please contact the hiring manager."
   },
   "contact": {
     "title": "📞 Please select a hiring manager:"
@@ -165,12 +166,12 @@
   "command_center": {
     "title": "🧩 Command Center",
     "subtitle": "Click a button below to use the function:",
-    "btn_myfeedbacks": "📋 My Feedback",
     "btn_lucky": "🎰 Lucky Draw",
     "btn_checkin": "✅ Check-in",
     "btn_invite": "🔗 Invite",
     "btn_vouchers": "📋 My Rewards",
     "btn_feedback": "📝 Feedback",
+    "btn_myfeedbacks": "📋 My Feedback",
     "btn_channel": "📢 Channel",
     "btn_tutorial": "📖 How to Get Code",
     "btn_back": "🔙 Main Menu"
@@ -181,5 +182,25 @@
     "not_registered": "❌ Please register first with /start.",
     "unknown_command": "❌ Unknown command.",
     "unclear": "I'm not sure what you mean. Please see the options below:"
+  },
+  "activation": {
+    "not_activated": "Your account has not been activated yet.\nPlease activate your account first to participate in the lucky draw.\n\n━━━━━━━━━━━━━━━━━━━━━\n🔓 Activate Account",
+    "prompt_code": "📝 Please send your 6-digit PG account invitation code to activate your eligibility.",
+    "request_received": "✅ Activation request received!\nPlease wait for administrator review. You will receive a notification once activation is successful.",
+    "success": "🎉 Congratulations! Your account has been activated!\nYou can now participate in the lucky draw.\nCurrent draw balance: X\nUse /lucky to start drawing!",
+    "rejected": "❌ Your activation request has been rejected.\nIf you have any questions, please contact the hiring manager.",
+    "pending_review": "⏳ Your activation request is under review, please wait patiently.",
+    "cooldown": "⏳ You have just submitted a request, please try again in 30 minutes.",
+    "code_used": "❌ This invitation code has already been used by another user and cannot be activated again.\nPlease confirm and re-enter, or contact the hiring manager.",
+    "link_locked": "❌ Your account has already been activated and the invitation code is bound.\nIf you need to modify it, please contact the hiring manager.",
+    "admin_activate_format": "⚠️ Format: /activate <invitation_code>\nExample: /activate 123456",
+    "admin_activate_not_found": "❌ User with invitation code {code} was not found.",
+    "admin_activate_already": "ℹ️ User {code} has been activated.",
+    "admin_activate_success": "✅ User {code} has been activated successfully.",
+    "admin_reject_format": "⚠️ Format: /reject <invitation_code>\nExample: /reject 123456",
+    "admin_reject_success": "✅ Activation for user {code} has been rejected.",
+    "admin_pending_title": "📋 Pending activation requests:\n\nA total of X users are waiting for activation.\nUse /activate <invitation_code> to approve, or /reject <invitation_code> to reject.",
+    "admin_pending_item": "{number}. Invitation Code: {code}\n   User: {username} (ID: {chat_id})\n   Application Time: {date}",
+    "admin_pending_empty": "📭 No pending activation requests at the moment."
   }
 }
