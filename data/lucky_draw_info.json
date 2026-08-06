@@ -1,0 +1,187 @@
+{
+  "title": {
+    "en": "🎰 Lucky Draw - Prize List & Rules",
+    "am": "🎰 ዕድል ሙከራ - የሽልማት ዝርዝር እና ደንቦች"
+  },
+  "sections": {
+    "prize_list": {
+      "title": {
+        "en": "💰 Prize List (with Probabilities)",
+        "am": "💰 የሽልማት ዝርዝር (ከመውጣት ዕድል ጋር)"
+      },
+      "note": {
+        "en": "These are theoretical values for each draw, actual results may vary.",
+        "am": "እነዚህ ለእያንዳንዱ ዕጣ የተዘጋጁ ቲዎሪካዊ እሴቶች ናቸው፣ ትክክለኛ ውጤቶች ሊለያዩ ይችላሉ።"
+      },
+      "cash_rewards": {
+        "title": {
+          "en": "💸 Cash Rewards",
+          "am": "💸 የጥሬ ገንዘብ ሽልማቶች"
+        },
+        "items": [
+          { "amount": "10 ETB", "probability": "45.000%" },
+          { "amount": "50 ETB", "probability": "9.000%" },
+          { "amount": "100 ETB", "probability": "4.500%" },
+          { "amount": "500 ETB", "probability": "0.900%" },
+          { "amount": "1,000 ETB", "probability": "0.450%" },
+          { "amount": "10,000 ETB", "probability": "0.045%" },
+          { "amount": "50,000 ETB", "probability": "0.009%" }
+        ]
+      },
+      "voucher_rewards": {
+        "title": {
+          "en": "🎟️ Upgrade Vouchers",
+          "am": "🎟️ የማሻሻያ ኩፖኖች"
+        },
+        "items": [
+          { "amount": "100 ETB Voucher", "probability": "6.000%" },
+          { "amount": "500 ETB Voucher", "probability": "1.200%" },
+          { "amount": "1,000 ETB Voucher", "probability": "0.600%" },
+          { "amount": "5,000 ETB Voucher", "probability": "0.120%" },
+          { "amount": "20,000 ETB Voucher", "probability": "0.030%" },
+          { "amount": "50,000 ETB Voucher", "probability": "0.012%" }
+        ]
+      },
+      "special_rewards": {
+        "title": {
+          "en": "🎁 Special Rewards",
+          "am": "🎁 ልዩ ሽልማቶች"
+        },
+        "items": [
+          { "name": { "en": "VIP1 Quota ×5", "am": "የ VIP1 ቦታ ×5" }, "probability": "0.010%" },
+          { "name": { "en": "Free Upgrade", "am": "በነጻ ማሻሻል" }, "probability": "0.004%" }
+        ]
+      },
+      "no_prize": {
+        "label": {
+          "en": "Not Won",
+          "am": "አልደረሰዎትም"
+        },
+        "probability": "32.120%"
+      },
+      "disclaimer": {
+        "en": "💡 The actual probability of each prize will increase slightly with the total number of draws. Specific rules are not disclosed.",
+        "am": "💡 የእያንዳንዱ ሽልማት ትክክለኛ ዕድል ከአጠቃላይ የዕጣ ብዛት ጋር በትንሹ ይጨምራል። ዝርዝር ደንቦች አይገለጹም።"
+      }
+    },
+    "rules": {
+      "title": {
+        "en": "📌 How It Works (Rules)",
+        "am": "📌 እንዴት እንደሚሰራ (ደንቦች)"
+      },
+      "sections": [
+        {
+          "id": "how_to_get_chances",
+          "title": {
+            "en": "📌 How to Get Draw Chances",
+            "am": "📌 የዕጣ እድሎችን እንዴት ማግኘት ይቻላል?"
+          },
+          "items": [
+            {
+              "en": "1️⃣ Daily Check-in: 7 consecutive days → +1 chance",
+              "am": "1️⃣ ዕለታዊ ቼክ-ኢን: ለ7 ተከታታይ ቀናት → +1 እድል"
+            },
+            {
+              "en": "2️⃣ Upgrade membership: VIP1 → +1, VIP2 → +2, VIP3 → +4",
+              "am": "2️⃣ የአባልነት ደረጃ ማሻሻል: VIP1 → +1, VIP2 → +2, VIP3 → +4"
+            },
+            {
+              "en": "3️⃣ Invite a friend: Each friend who joins as VIP → +1 chance",
+              "am": "3️⃣ ጓደኛ መጋበዝ: እያንዳንዱ ጓደኛ ቪአይፒ ሆኖ ሲመዘገብ → +1 እድል"
+            }
+          ]
+        },
+        {
+          "id": "how_to_play",
+          "title": {
+            "en": "🎰 How to Play",
+            "am": "🎰 እንዴት መጫወት ይቻላል?"
+          },
+          "items": [
+            {
+              "en": "• Go to the Lucky Draw Center and click the draw button.",
+              "am": "• ወደ ዕድል ሙከራ ማዕከል ይሂዱ እና የዕጣ ቁልፉን ይጫኑ።"
+            },
+            {
+              "en": "• Each draw costs 1 chance.",
+              "am": "• እያንዳንዱ ሙከራ 1 ዕድል ይጠቀማል።"
+            },
+            {
+              "en": "• Win cash, upgrade vouchers, or special prizes.",
+              "am": "• ጥሬ ገንዘብ፣ የማሻሻያ ኩፖኖች፣ ወይም ልዩ ሽልማቶች ያሸንፉ።"
+            },
+            {
+              "en": "• Every draw counts toward your guarantee progress.",
+              "am": "• እያንዳንዱ ሙከራ ለዋስትና እድገት ይቆጠራል።"
+            }
+          ]
+        },
+        {
+          "id": "guarantee",
+          "title": {
+            "en": "🏆 Guaranteed Rewards (Lifetime)",
+            "am": "🏆 የዋስትና ሽልማቶች (በህይወት ዘመን አንድ ጊዜ)"
+          },
+          "items": [
+            {
+              "en": "After 10 draws → 50 ETB",
+              "am": "ከ10 ሙከራዎች በኋላ → 50 ብር"
+            },
+            {
+              "en": "After 50 draws → 10,000 ETB",
+              "am": "ከ50 ሙከራዎች በኋላ → 10,000 ብር"
+            },
+            {
+              "en": "After 100 draws → 100,000 ETB",
+              "am": "ከ100 ሙከራዎች በኋላ → 100,000 ብር"
+            }
+          ]
+        },
+        {
+          "id": "claiming",
+          "title": {
+            "en": "📋 How to Claim Your Prize",
+            "am": "📋 ሽልማትዎን እንዴት መቀበል ይቻላል?"
+          },
+          "items": [
+            {
+              "en": "• Check \"My Rewards\" via /vouchers",
+              "am": "• በ /vouchers በኩል \"ሽልማቶቼ\"ን ይመልከቱ"
+            },
+            {
+              "en": "• Contact the Hiring Manager (Lucia / Linda) with your invite code",
+              "am": "• የቅጥር ሥራ አስኪያጅዎን (ሉሲያ / ሊንዳ) በግብዣ ኮድዎ ያነጋግሩ"
+            },
+            {
+              "en": "• Cash → credited to your account. Voucher → use when upgrading",
+              "am": "• ጥሬ ገንዘብ → ወደ መለያዎ ይገባል። ኩፖን → ደረጃዎን ሲያሳድጉ ይጠቀሙበት"
+            }
+          ]
+        },
+        {
+          "id": "progress",
+          "title": {
+            "en": "📊 Check Your Progress",
+            "am": "📊 እድገትዎን ይመልከቱ"
+          },
+          "items": [
+            {
+              "en": "• Use /lucky to see your current draw balance, guarantee progress, and full prize list",
+              "am": "• የአሁኑን የዕጣ ቀሪ ሂሳብ፣ የዋስትና እድገት እና ሙሉ የሽልማት ዝርዝር ለማየት /lucky ይጠቀሙ"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "full_agreement": {
+    "title": {
+      "en": "📄 Full User Agreement",
+      "am": "📄 ሙሉ የተጠቃሚ ስምምነት"
+    },
+    "link": {
+      "en": "https://raw.githubusercontent.com/pgreelshrt/PG_Guide/main/en/agreement.html",
+      "am": "https://raw.githubusercontent.com/pgreelshrt/PG_Guide/main/am/agreement.html"
+    }
+  }
+}
