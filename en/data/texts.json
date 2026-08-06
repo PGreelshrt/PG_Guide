@@ -204,6 +204,7 @@
     "admin_reject_success": "✅ Activation for user {code} has been rejected.",
     "admin_pending_title": "📋 Pending activation requests:\n\nA total of X users are waiting for activation.\nUse /activate <invitation_code> to approve, or /reject <invitation_code> to reject.",
     "admin_pending_item": "{number}. Invitation Code: {code}\n   User: {username} (ID: {chat_id})\n   Application Time: {date}",
-    "admin_pending_empty": "📭 No pending activation requests at the moment."
+    "admin_pending_empty": "📭 No pending activation requests at the moment.",
+    "bind_first": "❌ Please bind your invitation code first by sending a 6-digit code."
   }
 }
