@@ -158,7 +158,10 @@
     "reset_success": "✅ Your invite code has been cleared. Please send a new 6-digit code.",
     "code_taken": "❌ Invite code {code} is already taken by another user. Please verify.",
     "tutorial_caption": "📖 How to view your invite code\n\n1. Open your account page\n2. Find \"Invite Code\"\n3. Copy the 6-digit code\n\n🔗 [Click here](https://pgmall1234.com/user)",
-    "bound": "❌ Your invitation code has been bound. If you need to modify it, please contact the hiring manager."
+    "bound": "❌ Your invitation code has been bound. If you need to modify it, please contact the hiring manager.",
+    "confirm_bind": "⚠️ You are about to bind invitation code: {code}\nPlease confirm this is your correct invitation code.",
+    "confirm_btn": "✅ Confirm",
+    "cancel_btn": "🔙 Cancel"
   },
   "contact": {
     "title": "📞 Please select a hiring manager:"
