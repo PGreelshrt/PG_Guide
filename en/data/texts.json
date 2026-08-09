@@ -20,12 +20,12 @@
     "center": "🏠 Lucky Draw Center",
     "back": "🔙 Main Menu",
     "contact": "👥 Contact Hiring Manager",
+    "my_rewards_btn": "📋 My Rewards",
     "empty_messages": [
       "ℹ️ No prize this time. All data is automatically calculated, fair and transparent. Stay active and look forward to next week's benefits.",
       "📊 No prize this round, your draw count has been recorded.",
       "💡 Sorry, this draw did not win. Earn extra chances by expanding your team.",
       "👑 Dear premium member, no prize this time. Your daily work and weekly salary remain your core wealth.",
-      "my_rewards_btn": "📋 My Rewards",
       "🛡️ This draw is over, no prize. When the guarantee is met, your prize will be 100% delivered."
     ],
     "guarantee_progress": "📊 Guarantee Progress:",
