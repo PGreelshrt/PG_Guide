@@ -51,7 +51,7 @@
     "win_voucher": "🎉 የ X ብር የደረጃ ማሳደጊያ ቫውቸር አሸንፈዋል! ለመቀበል የግብዣ ኮድዎን ያቅርቡ።",
     "remaining": "💎 የቀሩ ዕድሎች፦ X",
     "checkin_missed": "⚠️ ለ X ቀናት አልገቡም። ተከታታይ ቀናት ወደ X ተቀንሰዋል።",
-    "checkin_streak_label": "📌 check-in እድገት"
+    "checkin_streak_label": "📌 check-in እድገት",
     "checkin_need": "📌 1 ዕድል ለማግኘት ተጨማሪ {days} ቀናት ያስፈልጋሉ።"
   },
   "vouchers": {
@@ -211,5 +211,6 @@
     "admin_pending_item": "{ተራ ቁጥር}. የጋበዣ ኮድ: {code}\n   ተጠቃሚ: {username} (ID: {chat_id})\n   የማመልከቻ ጊዜ: {date}",
     "admin_pending_empty": "📭 በአሁኑ ጊዜ ግምገማ የሚጠብቅ ምንም የማንቂያ ጥያቄ የለም።",
     "bind_first": "❌ እባክዎ በመጀመሪያ ባለ 6 አሃዝ የጋበዣ ኮድ በመላክ የጋበዣ ኮድዎን ያያይዙ።"
+    "activate_btn": "🔓 አካውንት ያንቁ"
   }
 }
