@@ -166,7 +166,8 @@
     "confirm_bind": "⚠️ You are about to bind invitation code: {code}\nPlease confirm this is your correct invitation code.",
     "confirm_btn": "✅ Confirm",
     "cancel_btn": "🔙 Cancel",
-    "get_code_hint": "📌 Don't know how to get your invite code? Send /get_code to view the tutorial."
+    "get_code_hint": "📌 Don't know how to get your invite code? Send /get_code to view the tutorial.",
+    "invite_updated": "ℹ️ Your invitation code has been updated by the administrator.\n\nOld code: {old_code}\nNew code: {new_code}\n\nYour invite link has been updated accordingly."
   },
   "contact": {
     "title": "📞 Please select a hiring manager:"
