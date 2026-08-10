@@ -52,6 +52,7 @@
     "remaining": "💎 የቀሩ ዕድሎች፦ X",
     "checkin_missed": "⚠️ ለ X ቀናት አልገቡም። ተከታታይ ቀናት ወደ X ተቀንሰዋል።",
     "checkin_streak_label": "📌 check-in እድገት"
+    "checkin_need": "📌 1 ዕድል ለማግኘት ተጨማሪ {days} ቀናት ያስፈልጋሉ።"
   },
   "vouchers": {
     "title": "📋 በመጠባበቅ ላይ ያሉ ሽልማቶችዎ፦",
