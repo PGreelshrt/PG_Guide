@@ -51,7 +51,7 @@
     "win_voucher": "🎉 You won a X ETB upgrade voucher! Provide invite code to claim.",
     "remaining": "💎 Remaining chances: X",
     "checkin_missed": "⚠️ You missed X day(s). Consecutive days adjusted to X.",
-    "checkin_streak_label": "📌 Check-in Progress"
+    "checkin_streak_label": "📌 Check-in Progress",
     "checkin_need": "📌 {days} more day(s) to earn 1 chance."
   },
   "vouchers": {
@@ -210,6 +210,7 @@
     "admin_pending_title": "📋 Pending activation requests:\n\nA total of X users are waiting for activation.\n\n/activate \n/reject",
     "admin_pending_item": "{number}. Invitation Code: {code}\n   User: {username} (ID: {chat_id})\n   Application Time: {date}",
     "admin_pending_empty": "📭 No pending activation requests at the moment.",
-    "bind_first": "❌ Please bind your invitation code first by sending a 6-digit code."
+    "bind_first": "❌ Please bind your invitation code first by sending a 6-digit code.",
+    "activate_btn": "🔓 Activate Account"
   }
 }
