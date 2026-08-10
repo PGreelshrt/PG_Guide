@@ -52,6 +52,7 @@
     "remaining": "💎 Remaining chances: X",
     "checkin_missed": "⚠️ You missed X day(s). Consecutive days adjusted to X.",
     "checkin_streak_label": "📌 Check-in Progress"
+    "checkin_need": "📌 {days} more day(s) to earn 1 chance."
   },
   "vouchers": {
     "title": "📋 Your pending rewards:",
