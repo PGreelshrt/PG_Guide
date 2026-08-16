@@ -28,16 +28,16 @@
     "id": "quiz-activity",
     "title": "Quiz Competition",
     "summary": "Participate every Tuesday, Thursday, and Sunday and win",
-    "time": "Every Tuesday, Thursday, and Sunday at 7:00 PM UTC+3 | 1:00 PM Habesha Time",
+    "time": "Every Tuesday, Thursday, and Sunday at 7:00 PM (UTC+3) | 1:00 Habesha Time (Night)",
     "status": "Active",
     "content": "<p><strong>▍ Rules</strong></p><ul><li>Each event includes 10 fun Q&A questions.</li><li>The first three users to answer correctly can receive a 30 ETB bonus.</li></ul><p><strong>▍ How to Claim</strong></p><p>After the competition ends, take a screenshot of the winners' list and send it to the recruitment manager to claim your bonus.</p>"
   },
   {
     "id": "raffle-activity",
-    "title": "Raffle Ticket Activity",
-    "summary": "Buy a 20 ETB ticket and win 1,000 ETB",
-    "time": "Every Sunday at 15:00 (UTC+3) | 9:00 AM Habesha Time",
+    "title": "10 ETB Raffle Entry Activity",
+    "summary": "Participate with 10 ETB and win 5,000 ETB",
+    "time": "When 500 spots are filled, the draw will be held at 15:00 (UTC+3) | 9:00 PM Habesha Time the next day.",
     "status": "Active",
-    "content": "<p><strong>▍ How to Participate</strong></p><ul><li>Every ticket has a chance to win 1,000 ETB.</li><li>Each ticket costs 20 ETB.</li><li>Even if you do not win, the 20 ETB will be refunded after the event ends.</li></ul><p><strong>▍ Results Announcement</strong></p><p>Winning order numbers will be announced in the group next Sunday at 15:00 (UTC+3) | 9:00 AM Habesha Time.</p><p><strong>▍ Ticket Expiration</strong></p><p>Raffle tickets have an expiration time. After expiration, funds are automatically refunded to your PG Mall account balance.</p>"
+    "content": "<p><strong>▍ How to Participate</strong></p><ul><li>Every entry slot has a chance to win 5,000 ETB.</li><li>Each entry slot costs 10 ETB.</li><li>Entry fees are non-refundable.</li></ul><p><strong>▍ Results Announcement</strong></p><p>The winner will be announced at 15:00 (UTC+3) | 9:00 Habesha Time the next day after all 500 spots are filled.</p><p><strong>▍ Prize Claim Period</strong></p><p>The winner must contact the recruitment manager within 24 hours after the announcement to claim the prize. After receiving the prize, a winner verification video is required to confirm authenticity.</p>"
   }
 ]
