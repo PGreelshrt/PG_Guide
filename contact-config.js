@@ -4,5 +4,6 @@ var CONTACT_CONFIG = {
     contacts: [
         { name: "Lucia Telegram",   url: "https://t.me/Lucia8050",      icon: "📱" },
         { name: "Linda Telegram",  url: "https://t.me/PG_Linda",       icon: "📱" },
+        { name: "Mia Telegram",  url: "https://t.me/Mia66086",       icon: "📱" },
     ]
 };
